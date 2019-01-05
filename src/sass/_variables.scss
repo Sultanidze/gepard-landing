@@ -1,0 +1,23 @@
+// Colours:
+$black:                 #000000;
+$bg_dark:               #221724;
+$checked:               #e64c37;
+$active:                #00b39e;
+$gradient_start:        #78cba2;
+$gradient_end:          $active;
+$gradient_angle:        36deg;
+$text_light:            #e9e8e9;
+$text_grey:             #949494;
+$text_dark:             #777578;
+$white:                 #FFFFFF;
+
+// Transitions:
+$time_trans:        0.3s;
+
+%wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 17px;
+    padding-right: 17px;
+    max-width: 1280px;
+}

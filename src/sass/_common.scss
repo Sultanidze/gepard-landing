@@ -1,0 +1,62 @@
+// SOME RESETS
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5{
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+figure{
+    margin: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+    text-decoration: none;
+}
+// IE reset input field
+::-ms-clear{
+    display: none;
+}
+
+// GLOBAL STYLES
+.g-hidden{
+    display: none;
+}
+
+// MAIN STYLES
+html, body{
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    height: 100%;
+    font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-size: 18px;
+}
+.b-container_page{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+//lazy load:
+img {
+    display: block;
+    opacity: 1;
+    transition: opacity $time_trans;
+}
+
+img[data-src], img[data-src-lg] {
+    opacity: 0;
+}

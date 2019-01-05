@@ -1,0 +1,50 @@
+{
+  "name": "my-gulp-template",
+  "version": "1.0.0",
+  "description": "my gulp template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "last 10 major versions",
+    "Firefox > 20",
+    "> 1%",
+    "ie 11"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "author": "Sultanidze",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "browser-sync": "^2.24.7",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^4.17.1",
+    "webpack-stream": "^5.1.1"
+  },
+  "dependencies": {
+    "is-mobile": "^1.0.0",
+    "jump.js": "^1.0.2",
+    "normalize.css": "^8.0.1",
+    "object-fit-images": "^3.2.3"
+  }
+}
