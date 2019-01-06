@@ -1,6 +1,8 @@
 .b-btn{
     position: relative;
     display: inline-block;
+    border: none;
+    background-color: transparent;
     min-width: 240px;
     padding: 5px;
     border-radius: 31px;
@@ -20,27 +22,7 @@
     }
     
     &:hover{
-        box-shadow: 0 0 24px rgba($black, .22);
-        
-        &:before{
-            opacity: .7;
-            background-image: linear-gradient(to right, $white, $active, $white); 
-        }
-            
-        .b-btn{
-            &__wr_inner{
-                background-image: linear-gradient($gradient_angle, $white, $white);
-                box-shadow: 0 0 24px rgba($black, 0);
-                cursor: pointer;
-                
-                &:before{
-                    opacity: .06;
-                }
-            }
-            &__inner{
-                color: $active;
-            }
-        }
+        @extend %btn_hover;
     }
     
     &__wr_inner{
@@ -48,7 +30,7 @@
         display: block;
         border-radius: 26px;
         padding: 4px;
-        background-image: linear-gradient($gradient_angle, $gradient_start, $gradient_end);
+        background-image: linear-gradient($gradient_angle, $gradient__active_start, $gradient__active_end);
         cursor: pointer;
         box-shadow: 0 0 24px rgba($black, .22);
         
@@ -62,7 +44,7 @@
             z-index: 0;
             border-radius: inherit;
             opacity: 0;
-            background-image: linear-gradient($gradient_angle, $gradient_start, $gradient_end); 
+            background-image: linear-gradient($gradient_angle, $gradient__active_start, $gradient__active_end); 
         }
     }
     &__inner{
@@ -81,5 +63,29 @@
         font-weight: 600;
         background-color: transparent;
 //        transition: color $time_trans;
+    }
+}
+
+%btn_hover{
+    box-shadow: 0 0 24px rgba($black, .22);
+
+    &:before{
+        opacity: .7;
+        background-image: linear-gradient(to right, $white, $active, $white); 
+    }
+
+    .b-btn{
+        &__wr_inner{
+            background-image: linear-gradient($gradient_angle, $white, $white);
+            box-shadow: 0 0 24px rgba($black, 0);
+            cursor: pointer;
+
+            &:before{
+                opacity: .06;
+            }
+        }
+        &__inner{
+            color: $active;
+        }
     }
 }

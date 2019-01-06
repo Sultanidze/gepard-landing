@@ -1,0 +1,70 @@
+.b-target{
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    width: calc(#{(100%/3)} - 30px);
+    padding: 61px 60px 55px;
+    background-color: rgba($white, 0.42);
+    box-shadow: 0 0 24px rgba($black, 0.22);
+    transition: background-color $time_trans;
+
+    &:hover{
+        background-color: $bg_dark;
+        
+        .b-target{
+            &__title{
+                color: $text_grey;
+            }
+            &__btn{
+                @extend %btn_hover;
+            }
+        }
+    }
+    
+    &s{
+        padding: 60px 0;
+        background-image: url(../assets/img/targets-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        &__wr{
+            @extend %wrapper;
+        }
+        &__container{
+            margin: 0 -15px;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    &__header{
+        margin-bottom: 22px;
+        display: flex;
+    }
+    
+    &__wr_icon{
+        width: 60px;
+        height: 41px;
+        
+        img{
+            height: 100%;
+            color: red;
+        }
+    }
+    
+    &__title{
+        font-size: 22px;
+        color: $black;
+    }
+
+    &__descr{
+        margin-bottom: 45px;
+        font-weight: 500;
+        color: $text_grey;
+    }
+
+    &__btn{
+        margin-top: auto;
+        align-self: center;
+    }
+}

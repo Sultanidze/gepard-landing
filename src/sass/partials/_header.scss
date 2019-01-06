@@ -20,7 +20,7 @@
         @extend %wrapper;
         display: flex;
         justify-content: space-between;
-        height: $heder__height_desktop;
+        height: $header__height_desktop;
     }
     &__logo{
         display: flex;
@@ -135,7 +135,7 @@
                 bottom: 0;
                 left: 0;
                 z-index: -1;
-                background-image: linear-gradient($gradient_angle, $gradient_start, $gradient_end);
+                background-image: linear-gradient($gradient_angle, $gradient__active_start, $gradient__active_end);
                 opacity: .5;
                 transition: opacity $time_trans;
             }

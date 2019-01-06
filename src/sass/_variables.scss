@@ -1,17 +1,19 @@
 // Colours:
 $black:                 #000000;
-$bg_dark:               #221724;
 $checked:               #e64c37;
 $active:                #00b39e;
-$gradient_start:        #78cba2;
-$gradient_end:          $active;
-$gradient_angle:        36deg;
+$gradient__active_start:#78cba2;
+$gradient__active_end:  $active;
+$gradient__dark_start:  #423445;
+$gradient__dark_end:    #2d1b30;
+$bg_dark:               #221724;
 $text_light:            #e9e8e9;
 $text_grey:             #949494;
 $text_dark:             #777578;
 $white:                 #FFFFFF;
 
-$heder__height_desktop: 114px;
+$header__height_desktop: 114px;
+$gradient_angle:        36deg;
 
 // Transitions:
 $time_trans:        0.3s;

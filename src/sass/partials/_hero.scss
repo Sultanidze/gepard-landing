@@ -1,6 +1,7 @@
 .b-hero {
-    max-height: calc(768px - #{$heder__height_desktop});
-    height: calc(100vh - #{$heder__height_desktop});
+    min-height: 320px;
+    height: calc(100vh - #{$header__height_desktop});
+    max-height: calc(768px - #{$header__height_desktop});
     padding: 15px 20px 0;
     position: relative;
     display: flex;
