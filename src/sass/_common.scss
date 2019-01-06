@@ -45,6 +45,7 @@ html, body{
     font-size: 18px;
 }
 .b-container_page{
+    padding-top: $heder__height_desktop;
     height: 100%;
     display: flex;
     flex-direction: column;

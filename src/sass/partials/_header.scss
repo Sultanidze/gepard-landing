@@ -1,9 +1,26 @@
 .b-header{
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: $white;
+    opacity: 0.6;
+    transition: opacity $time_trans;
+    
+    &.position_top{
+//        position: absolute;
+        opacity: 1;
+    }
+    &:hover{
+        opacity: 1;
+    }
+    
     &__wr{
         @extend %wrapper;
         display: flex;
         justify-content: space-between;
-        height: 114px;
+        height: $heder__height_desktop;
     }
     &__logo{
         display: flex;
