@@ -7,6 +7,12 @@ import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS     from 'gulp-clean-css';
 import browserSync  from 'browser-sync';
 //import notify from 'gulp-notify';
+
+import svgSprite    from 'gulp-svg-sprite';
+import svgmin       from 'gulp-svgmin';
+import cheerio      from 'gulp-cheerio';
+import replace      from 'gulp-replace';
+
 import cache        from 'gulp-cache';
 import imagemin     from 'gulp-imagemin';
 import del          from 'del';
@@ -32,7 +38,7 @@ var src = {
     assets: 'src/assets/',
     fonts: 'src/assets/fonts/**/*.*',
 	img: 'src/assets/img/**/*.+(png|jpg|gif|svg|ico)',
-//	sprite: 'src/assets/sprite/*',
+	sprite: 'src/assets/sprite/*.svg',
 };
 
 //src.sassModules = src.sassModules.map(function(path){return src.nodeModules + path});
@@ -103,7 +109,44 @@ gulp.task('img', function() {
 		.pipe(gulp.dest(dist.img));
 });
 
-gulp.task('assets', ["fonts", "img"], function() {
+gulp.task('sprite', function(){
+    return gulp.src(src.sprite)
+	// minify svg
+    .pipe(svgmin({
+        js2svg: {
+            pretty: true
+        }
+    }))
+    // remove all fill, style and stroke declarations in out shapes
+    .pipe(cheerio({
+        run: function ($) {
+            $('[fill]').removeAttr('fill');
+            $('[stroke]').removeAttr('stroke');
+            $('[style]').removeAttr('style');
+        },
+        parserOptions: {xmlMode: true}
+    }))
+    // cheerio plugin create unnecessary string '&gt;', so replace it.
+    .pipe(replace('&gt;', '>'))
+    // build svg sprite
+    .pipe(svgSprite({
+        mode: {
+            symbol: {
+                sprite: "../sprite.svg",
+                render: {
+//                    scss: {
+//                        dest:'../../sass/partials/_sprite.scss',
+//                        template: src.assets + "sprite/_sprite_template.scss"
+//                    }
+                }
+            }
+        }
+    }))
+    .pipe(gulp.dest(src.assets));
+});
+
+gulp.task('sassGenerators', ['sprite']);
+gulp.task('assets', ["fonts", "img", 'sassGenerators'], function() {
     return gulp.src(src.assets + "*.*")
         .pipe(gulp.dest(dist.assets))
 });
@@ -129,6 +172,7 @@ gulp.task('serve', function() {
 	gulp.watch(src.js, ['js']).on('change', browserSync.reload);
 	gulp.watch(src.fonts, ['fonts']).on('change', browserSync.reload);
 	gulp.watch(src.img, ['img']).on('change', browserSync.reload);
+	gulp.watch(src.sprite, gulpSequence('sprite', 'sass')).on('change', browserSync.reload);
 });
 
 gulp.task('cleanCache', function (callback) {
@@ -140,7 +184,8 @@ gulp.task('clean', ['cleanCache'], function() {
     });
 });
 
-gulp.task('build', ['assets', 'sass', 'js', 'html']);
+gulp.task('sassUpdate', gulpSequence('assets', 'sass'));
+gulp.task('build', ['assets', 'sassUpdate', 'js', 'html']);
 
 gulp.task('prod', gulpSequence('set-prod-node-env', 'clean', 'build'));
 gulp.task('dev', gulpSequence('set-dev-node-env', 'build', 'serve'));

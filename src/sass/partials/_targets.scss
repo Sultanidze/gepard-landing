@@ -12,6 +12,7 @@
         background-color: $bg_dark;
         
         .b-target{
+            &__wr_icon,
             &__title{
                 color: $text_grey;
             }
@@ -45,10 +46,10 @@
     &__wr_icon{
         width: 60px;
         height: 41px;
+        color: $active;
         
-        img{
-            height: 100%;
-            color: red;
+        svg{
+            fill: currentColor;
         }
     }
     

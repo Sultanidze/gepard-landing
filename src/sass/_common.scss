@@ -53,8 +53,8 @@ html, body{
 //lazy load:
 img {
     display: block;
-    opacity: 1;
-    transition: opacity $time_trans;
+//    opacity: 1;
+//    transition: opacity $time_trans;
 }
 
 img[data-src], img[data-src-lg] {

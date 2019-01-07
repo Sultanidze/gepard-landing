@@ -11,6 +11,8 @@
     <script src="js/index.js" defer></script>
 </head>
 <body>
+    <img src="assets/sprite.svg" class="svg_injectable" style="display: none" alt="">
+    
     <div class="b-container_page">
         <header class="b-header position_top js-header">
             <div class="b-header__wr">
@@ -84,7 +86,10 @@
                         <a href="" class="b-target">
                             <div class="b-target__header">
                                 <span class="b-target__wr_icon">
-                                    <img src="assets/img/icons/manufacturers.svg" alt="" class="b-target__icon">
+                                    <svg class="b-target__icon" width="45" height="41">
+                                        <use xlink:href="#manufacturers"/>
+                                    </svg>
+<!--                                    <img src="assets/img/icons/manufacturers.svg" alt="" class="b-target__icon">-->
                                 </span>
                                 <span class="b-target__title">MANUFACTURERS</span>
                             </div>
@@ -99,7 +104,12 @@
                         </a>
                         <a href="" class="b-target">
                             <div class="b-target__header">
-                                <span class="b-target__wr_icon"><img src="assets/img/icons/marketplaces.svg" alt="" class="b-target__icon"></span>
+                                <span class="b-target__wr_icon">
+<!--                                    <img src="assets/img/icons/marketplaces.svg" alt="" class="b-target__icon svg_injectable">-->
+                                    <svg class="b-target__icon" width="40" height="41">
+                                        <use xlink:href="#marketplaces"/>
+                                    </svg>
+                                </span>
                                 <span class="b-target__title">MARKETPLACES</span>
                             </div>
                             <p class="b-target__descr">Great product sales demand great product content. But when it comes to data taxonomy, one size doesn't fit all. Gepard overcomes this challenge, aggregating product data from multiple sources and supplying marketplace with corresponding A+  content.</p>
@@ -113,7 +123,12 @@
                         </a>
                         <a href="" class="b-target">
                             <div class="b-target__header">
-                                <span class="b-target__wr_icon"><img src="assets/img/icons/online-stores.svg" alt="" class="b-target__icon"></span>
+                                <span class="b-target__wr_icon">
+<!--                                    <img src="assets/img/icons/online-stores.svg" alt="" class="b-target__icon">-->
+                                    <svg class="b-target__icon" width="47" height="40">
+                                        <use xlink:href="#online-stores"/>
+                                    </svg>
+                                </span>
                                 <span class="b-target__title">ONLINE STORES</span>
                             </div>
                             <p class="b-target__descr">Strong product descriptions are crucial for converting shoppers into buyers. But it's hardly possible to take control of every product if there are thousands of them. Gepard builds end-to-end data flows to deliver content that sells directly to the webshop.</p>
