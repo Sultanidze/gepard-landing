@@ -1,2 +1,3 @@
-import header from "@comp/header"
-import "./helpers/svg-sprite-inject"
+import "./helpers";
+import header from "@comp/header";
+import toggleClients from "@comp/clients";
