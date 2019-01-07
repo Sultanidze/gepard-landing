@@ -1,0 +1,179 @@
+%bg-arrow_left{
+    background-image: #{url64('src/assets/img/base64/arrow-left.svg')};
+}
+
+.b-responce{
+    padding: 20px 0 40px;
+    text-align: center;
+    &__wr{
+        margin: 0 auto;
+        max-width: 750px;
+    }
+    &__face{
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        width: 108px;
+        height: 108px;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+    }
+    &__text{
+        margin-bottom: 26px;
+        position: relative;
+        color: $text_grey;
+        font-weight: 500;
+        user-select: none;
+        
+        &:before{
+            content: "";
+            position: absolute;
+            left: 25px;
+            bottom: calc(100% + 30px);
+            width: 22px;
+            height: 19px;
+            background-image: #{url64('src/assets/img/base64/quote.png')}
+            
+        }
+    }
+    &__position{
+        display: block;
+        font-weight: 500;
+        user-select: none;
+    }
+    &__name{
+        display: block;
+        line-height: normal;
+        font-size: 30px;
+        letter-spacing: .04em;
+        color: $active;
+        font-family: 'Caveat', cursive;
+        user-select: none;
+    }
+    
+    &s{
+        padding: 40px 0 55px;
+        &__wr{
+            @extend %wrapper;
+//            overflow: hidden;
+        }
+        &__slider{
+            &:not(.tns-slider){
+                > .b-responce{
+                    &:nth-child(n+2){
+                        display: none;
+                    }
+                }
+            }
+            &.tns-slider{
+                > .b-responce{
+                    display: inline-block;
+                    cursor: grab;
+                }
+            }
+        }
+    }
+}
+
+.tns{
+    &-outer{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    &-controls{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        button{
+            position: relative;
+            z-index: 1;
+            outline: none;
+            background-color: transparent;
+            border: none;
+            font-size: 0;
+            color: transparent;
+            width: 25px;
+            height: 55px;
+            opacity: 0.4;
+            
+            &:hover{
+                opacity: 0.8
+            }
+            
+            &:before{
+                content: '';
+                @extend %bg-arrow_left;
+                position: absolute;
+                top: 0;left: 0;right: 0;bottom: 0;left: 0;
+            }
+            
+            &[data-controls=next]{
+                &:before{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    &-nav{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        button{
+            position: relative;
+            background-color: transparent;
+            border: none;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            opacity: .8;
+            
+            + button{
+                margin-left: 2px;
+            }
+            
+            &:after{
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: $text_grey;
+            }
+            
+            &.tns-nav-active{
+                opacity: 1;
+                
+                &:after{
+                    background-color: $active;
+                }
+            }
+            
+            &:hover{
+                box-shadow: 0 0 24px rgba($black, .22);
+                background-image: linear-gradient(to right, $white, $active, $white); 
+                opacity: 0.6;
+                
+                &:after{
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}

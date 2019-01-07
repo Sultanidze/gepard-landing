@@ -14,8 +14,7 @@ $height_logo:    140px;
     }
     
     &s{
-        padding-top: 45px;
-        padding-bottom: 14px;
+        padding: 40px 0;
         
         &.opened{
             .text{
@@ -40,7 +39,7 @@ $height_logo:    140px;
             flex-direction: column;
         }
         &__toggler{
-            margin: -5px -5px 0 0;
+            margin-right: -5px;
             padding: 5px;
             align-self: flex-end;
             background-color: transparent;
@@ -75,6 +74,7 @@ $height_logo:    140px;
             transition: height $time_trans;
         }
         &__logos{
+            margin-bottom: -25px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;

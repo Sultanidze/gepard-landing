@@ -61,11 +61,40 @@ gulp.task('set-prod-node-env', function() {
     return process.env.NODE_ENV = 'production';
 });
 
+/* ----- inline-image(pathToFile) ----- */
+function sassFunctions(options) {
+  options = options || {};
+  options.base = options.base || process.cwd();
+
+  var fs        = require('fs');
+  var path      = require('path');
+  var types     = require('node-sass').types;
+
+  var funcs = {};
+
+  funcs['url64($file)'] = function(file, done) {
+    var file = path.resolve(options.base, file.getValue());
+    var ext  = file.split('.').pop();
+    ext = (ext === 'svg') ? 'svg+xml' : ext;
+    fs.readFile(file, function(err, data) {
+      if (err) return done(err);
+      data = new Buffer(data);
+      data = data.toString('base64');
+      data = 'url(data:image/' + ext + ';base64,' + data + ')';
+      data = types.String(data);
+      done(data);
+    });
+  };
+
+  return funcs;
+}
+
 gulp.task('sass', function() {
 	return gulp.src(src.sass)
 		.pipe(sourcemaps.init())
 			.pipe(sass({
-				includePaths: ['node_modules']
+				includePaths: ['node_modules'],
+                functions: sassFunctions()
 			}).on('error', sass.logError))
 			.pipe(autoprefixer())
 			// .pipe(autoprefixer(['last 10 major versions', "Firefox > 20", '> 0.1%', 'ie 10-11']))
