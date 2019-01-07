@@ -1,0 +1,31 @@
+.b-input{
+    margin-right: 7px;
+    flex-grow: 1;
+    padding: 1px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: $text_grey;
+    border-color: transparent;
+    outline: none;
+    
+    &::placeholder{
+        text-transform: uppercase;
+        color: $text_grey;
+    }
+}
+
+.b-wr_input{
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 7px 7px 7px 25px;
+    border-radius: 26px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    
+    > svg{
+        fill: $active;
+        flex-shrink: 0;
+    }
+}

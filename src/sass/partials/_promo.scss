@@ -1,0 +1,28 @@
+.b-promo{
+    padding: 95px 0 100px;
+    
+    &__form{
+        @extend %wrapper_narrow;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .b-wr_input{
+            margin: 0 25px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            border-color: $active;
+        }
+        
+        .b-btn{
+            min-width: 284px;
+        }
+    }
+    &__title{
+        font-size: 22px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    
+}

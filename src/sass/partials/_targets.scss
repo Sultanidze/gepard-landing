@@ -24,9 +24,10 @@
     
     &s{
         padding: 60px 0;
-        background-image: url(../assets/img/targets-bg.jpg);
+        background-image: url(../assets/img/targets-bg-left.jpg), url(../assets/img/targets-bg-right.jpg);
+        background-position: left, right;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         
         &__wr{
             @extend %wrapper;
