@@ -1,0 +1,60 @@
+.b-advantage{
+//    margin-right: 40px;
+    margin: 0 60px 52px;
+    display: flex;
+    width: calc(50% - 132px);
+//    padding-right: 6%;
+    font-size: 1rem;
+    
+    &__wr_icon{
+//        margin-left: 48px;
+        margin-right: 28px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100px;
+        padding-top: 0.55em;
+        color: $active;
+        
+        svg{
+            fill: currentColor;
+        }
+    }
+    &__content{
+        
+    }
+    &__title{
+        line-height: 1.9;
+        font-size: (18em/16);
+        text-transform: uppercase;
+    }
+    &__descr{
+        color: $text_grey;
+    }
+    
+    &s{
+//        padding: 50px 40px;
+        background-color: $bg_light;
+        
+        &__wr{
+            @extend %wrapper_narrow;
+        }
+        &__container{
+//            padding: 50px 60px;
+            padding: 50px 0 35px;
+        }
+        &__title{
+//            margin-left: 47px;
+            margin-bottom: 67px;
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        &__content{
+            margin: 0 -60px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
