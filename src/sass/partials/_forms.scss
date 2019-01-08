@@ -7,6 +7,7 @@
     color: $text_grey;
     border-color: transparent;
     outline: none;
+    background-color: transparent;
     
     &::placeholder{
         text-transform: uppercase;
@@ -23,6 +24,7 @@
     border-width: 2px;
     border-style: solid;
     border-color: transparent;
+    background-color: $white;
     
     > svg{
         fill: $active;

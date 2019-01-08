@@ -31,3 +31,10 @@ $time_trans:        0.3s;
         max-width: 1160px;
     }
 }
+
+%gradient__active_angled{
+    background-image: linear-gradient($gradient_angle, $gradient__active_start, $gradient__active_end);
+}
+%gradient__dark_angled{
+    background-image: linear-gradient($gradient_angle, $gradient__dark_start, $gradient__dark_end);
+}
