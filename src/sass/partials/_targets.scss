@@ -23,7 +23,7 @@
     }
     
     &s{
-        padding: 50px 0 60px;
+        padding: 20px 0 60px;
         background-image: url(../assets/img/targets-bg-left.jpg), url(../assets/img/targets-bg-right.jpg);
         background-position: left, right;
         background-repeat: no-repeat;
@@ -33,11 +33,11 @@
             @extend %wrapper;
         }
         &__title{
-            margin: 0 auto 20px;
+            margin: 0 auto 55px;
             text-align: center;
             text-transform: uppercase;
             font-size: 22px;
-            font-weight: 600;
+            font-weight: 400;
         }
         &__container{
             margin: 0 -15px;

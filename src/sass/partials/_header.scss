@@ -133,7 +133,8 @@
                 left: 0;
                 z-index: -1;
                 @extend %gradient__active_angled;
-                opacity: .5;
+                opacity: 1;
+//                opacity: .5;
                 transition: opacity $time_trans;
             }
             
