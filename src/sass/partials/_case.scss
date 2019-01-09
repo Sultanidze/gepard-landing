@@ -1,8 +1,10 @@
 .b-case{
     position: relative;
+    
     &__pic{
         display: block;
         img{
+            min-height: 270px;
             width: 100%;
         }
     }
@@ -24,6 +26,14 @@
         margin: 0 6%;
         width: 305px;
     }
+    &__common{
+            margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+    &__logo{
+        margin-right: 10px;
+    }
     &__title{
         margin-bottom: 40px;
         line-height: 1.1;
@@ -32,7 +42,6 @@
         color: $active;
         
         &_common{
-            margin-bottom: 20px;
             font-family: 'Caveat', cursive;
             line-height: 1.1;
             font-size: 30px;
