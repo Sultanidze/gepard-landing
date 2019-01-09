@@ -3,8 +3,8 @@
     background-color: $bg_dark;
     
     &__wr{
-        @extend %wrapper;
-        padding-top: 80px;
+        @extend %wrapper_narrow;
+        padding-top: 85px;
         padding-bottom: 75px;
     }
     
@@ -21,6 +21,7 @@
         }
         
         &_contacts {
+            margin-bottom: 20px;
             > li{
                 + li{
                     &:before{
