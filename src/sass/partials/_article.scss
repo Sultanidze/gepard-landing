@@ -58,6 +58,7 @@
             }
         }
     }
+    
     &_active{
         &:before{
             @include gradient__active_angled;

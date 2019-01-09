@@ -1,0 +1,58 @@
+.b-case{
+    position: relative;
+    &__pic{
+        display: block;
+        img{
+            width: 100%;
+        }
+    }
+    &__wr{
+        @extend %wrapper_narrow;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+    &__content{
+//        margin: 0 70px;
+        margin: 0 6%;
+        width: 305px;
+    }
+    &__title{
+        margin-bottom: 40px;
+        line-height: 1.1;
+        font-size: 22px;
+        font-weight: 500;
+        color: $active;
+        
+        &_common{
+            margin-bottom: 20px;
+            font-family: 'Caveat', cursive;
+            line-height: 1.1;
+            font-size: 30px;
+            color: $active;
+        }
+    }
+    
+    &_reverse{
+        .b-case{
+            &__wr{
+                flex-direction: row-reverse;
+            }
+        }
+    }
+    &_dark{
+        .b-case{
+            &__title{
+                color: $black;
+
+                &_common{
+                    color: $black;
+                }
+            }
+        }
+    }
+}
