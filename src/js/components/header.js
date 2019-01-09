@@ -3,10 +3,10 @@ const headerNode = document.querySelector('.js-header');
 function headerScrollHandler(e){
     const scrollY = window.scrollY;
     
-    if (scrollY >= 50){
-        headerNode.classList.remove('position_top');
+    if (scrollY >= 144){
+        headerNode.classList.add('state_scrolled');
     } else {
-        headerNode.classList.add('position_top');
+        headerNode.classList.remove('state_scrolled');
     }
 }
 

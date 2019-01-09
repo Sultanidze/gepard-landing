@@ -4,13 +4,23 @@
     right: 0;
     position: fixed;
     z-index: 100;
+    box-shadow: 0 0 24px rgba($black, .22);
     background-color: $white;
-    opacity: 0.6;
+    opacity: 1;
     transition: opacity $time_trans;
     
-    &.position_top{
+    &.state_scrolled{
 //        position: absolute;
-        opacity: 1;
+        opacity: 0.6;
+        
+        .b-header__wr{
+            height: 78px;
+        }
+        .b-link_logo{
+            svg{
+                width: 115px;
+            }
+        }
     }
     &:hover{
         opacity: 1;
@@ -21,6 +31,7 @@
         display: flex;
         justify-content: space-between;
         height: $header__height_desktop;
+        transition: height $time_trans;
     }
     &__logo{
         display: flex;
@@ -35,7 +46,9 @@
     
     svg{
         margin-top: 10px;
-        fill: $active
+        width: 150px;
+        fill: $active;
+        transition: width $time_trans;
     }
 }
 .b-nav {
@@ -120,11 +133,11 @@
             letter-spacing: .04em;
             font-weight: 600;
             color: $white;
-            background-color: rgba($white, 0);
+            background-color: transparent;
             text-transform: uppercase;
-            transition: box-shadow $time_trans, background-color $time_trans;
+            transition: color $time_trans, box-shadow $time_trans;
             
-            &:before{
+            &:before, &:after{
                 content: '';
                 position: absolute;
                 top: 0;
@@ -132,18 +145,23 @@
                 bottom: 0;
                 left: 0;
                 z-index: -1;
+                background-color: $white;
+            }
+            &:before{
+                background-color: $white;
+            }
+                
+            &:after{
                 @extend %gradient__active_angled;
                 opacity: 1;
-//                opacity: .5;
                 transition: opacity $time_trans;
             }
             
             &:hover{
                 box-shadow: 0 0 24px rgba($black, 0);
-                background-color: $white;
                 color: $active;
                 
-                &:before{
+                &:after{
                     opacity: 0;
                 }
             }
