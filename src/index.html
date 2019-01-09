@@ -78,6 +78,16 @@
         </header>
         <div class="b-content">
             <section class="b-hero">
+                <div class="b-container_video js-container_video">
+                    <picture class="b-video__bg">
+<!--                        <source media="(max-width: 767px)" srcset="assets/img/video-bg-sm.jpg">-->
+                        <source media="(min-width: 768px)" srcset="assets/img/video-bg.jpg">
+                        <img src="assets/img/video-bg.jpg" alt="">
+                    </picture>
+                    <video src="#" data-src="assets/bg.webm" autoplay loop muted class="b-video js-lazy__video">
+                    </video>
+                    <div class="b-video__overlay"></div>
+                </div>
                 <div class="b-hero__content">
                     <h1 class="h1 b-hero__title">Make Your Product Descriptions Drive Sales</h1>
                     <p class="b-hero__descr">120+ million product descriptions are transformed, enhanced and delivered via Gepard platform every month</p>

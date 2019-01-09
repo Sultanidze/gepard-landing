@@ -1,7 +1,10 @@
 import 'nodelist-foreach-polyfill';
+import videolazy from './videoLazyLoad';
 import '@iconfu/svg-inject';
 import objectFitImages from 'object-fit-images';
 import jump from 'jump.js'
+
+videolazy();
 
 SVGInject(document.querySelectorAll("img.svg_injectable"));
 
