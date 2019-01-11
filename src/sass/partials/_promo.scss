@@ -1,5 +1,6 @@
 .b-promo{
     position: relative;
+    min-height: 259px;
     padding: 95px 0 100px;
     
     &:before{
@@ -14,12 +15,15 @@
         transition: opacity $time_trans;
         @extend %gradient__dark_angled;
     }
-    
-    &__form{
+    &__wr{
         @extend %wrapper_narrow;
+    }
+    &__form{
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         
         .b-wr_input{
             margin: 0 25px;
@@ -31,6 +35,10 @@
         
         .b-btn{
             min-width: 284px;
+        }
+        
+        .b-form__popup{
+            
         }
     }
     &__title{

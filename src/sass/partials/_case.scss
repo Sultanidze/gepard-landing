@@ -59,10 +59,10 @@
     &_dark{
         .b-case{
             &__title{
-                color: $black;
+                color: $gradient__dark_end;
 
                 &_common{
-                    color: $black;
+                    color: $gradient__dark_end;
                 }
             }
         }

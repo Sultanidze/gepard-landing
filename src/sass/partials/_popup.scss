@@ -1,0 +1,69 @@
+%visible{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.b-popup{
+    flex-shrink: 0;
+    align-items: flex-start;
+    display: flex;
+    min-height: 55px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0);
+    transition: opacity $time_trans, transform $time_trans;
+    
+    &__wr_icon{
+        margin-right: 8px;
+        width: 44px;
+    }
+    
+    &__icon{
+        display: none;
+    }
+    &__text{
+        font-size: 12px;
+        font-weight: 700;
+        color: $popup__text_success;
+    }
+    &__btn{
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+    }
+    
+    &_success{
+        @extend %visible;
+        background-color: $popup__bg_success;
+        
+        .b-popup__icon, button{
+            color: $popup__fill_success;
+            fill: currentColor;
+        }
+        
+        .b-popup__icon_success{
+            display: inline-block;
+        }
+    }
+    
+    &_error{
+        @extend %visible;
+        background-color: $popup__bg_error;
+        
+        .b-popup__icon, button{
+            color: $popup__fill_error;
+            fill: currentColor;
+        }
+        .b-popup__icon_error{
+            display: inline-block;
+        }
+        .b-popup__text{
+            color: $black;
+        }
+    }
+}
