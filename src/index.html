@@ -31,10 +31,10 @@
                         <span href="#" class="b-nav__link">Products</span>
                         <ul class="b-nav__submenu"> 
                             <li>
-                                <a href="#" class="b-nav__link_sub">Online Stores</a>
+                                <a href="#pim" class="b-nav__link_sub js-link_anchor">pim</a>
                             </li>
                             <li>
-                                <a href="#" class="b-nav__link_sub">Marketplaces</a>
+                                <a href="#syndicator" class="b-nav__link_sub js-link_anchor">syndicator</a>
                             </li> 
                         </ul>
                     </li>
@@ -42,10 +42,10 @@
                         <span class="b-nav__link">Retailers</span>
                         <ul class="b-nav__submenu">
                             <li>
-                                <a href="#" class="b-nav__link_sub">Online Stores</a>
+                                <a href="#online-stores" class="b-nav__link_sub js-link_anchor">Online Stores</a>
                             </li>
                             <li>
-                                <a href="#" class="b-nav__link_sub">Marketplaces</a>
+                                <a href="#marketplaces" class="b-nav__link_sub js-link_anchor">Marketplaces</a>
                             </li>
                         </ul>
                     </li>
@@ -59,7 +59,7 @@
                         <span class="b-nav__link">Resources</span>
                         <ul class="b-nav__submenu">
                             <li>
-                                <a href="#" class="b-nav__link_sub">Case Studies</a>
+                                <a href="#case" class="b-nav__link_sub js-link_anchor">Case Studies</a>
                             </li>
                             <li>
                                 <a href="#" class="b-nav__link_sub">Whitepapers</a>
@@ -180,7 +180,7 @@
                             <div class="b-target__header">
                                 <span class="b-target__wr_icon">
                                     <svg class="b-target__icon" width="45" height="41">
-                                        <use xlink:href="#manufacturers"></use>
+                                        <use xlink:href="#manufacturer"></use>
                                     </svg>
 <!--                                    <img src="assets/img/icons/manufacturers.svg" alt="" class="b-target__icon">-->
                                 </span>
@@ -194,11 +194,12 @@
                             </button>
                         </a>
                         <a href="" class="b-target">
+                            <span class="b-anchor" id="marketplaces"></span>
                             <div class="b-target__header">
                                 <span class="b-target__wr_icon">
 <!--                                    <img src="assets/img/icons/marketplaces.svg" alt="" class="b-target__icon svg_injectable">-->
                                     <svg class="b-target__icon" width="40" height="41">
-                                        <use xlink:href="#marketplaces"></use>
+                                        <use xlink:href="#marketplace"></use>
                                     </svg>
                                 </span>
                                 <span class="b-target__title">Marketplaces</span>
@@ -211,11 +212,12 @@
                             </button>
                         </a>
                         <a href="" class="b-target">
+                            <span class="b-anchor" id="online-stores"></span>
                             <div class="b-target__header">
                                 <span class="b-target__wr_icon">
 <!--                                    <img src="assets/img/icons/online-stores.svg" alt="" class="b-target__icon">-->
                                     <svg class="b-target__icon" width="47" height="40">
-                                        <use xlink:href="#online-stores"></use>
+                                        <use xlink:href="#online-store"></use>
                                     </svg>
                                 </span>
                                 <span class="b-target__title">Online stores</span>
@@ -477,6 +479,7 @@
                 </div>
             </article>
             <section class="b-case b-case_reverse">
+                <span class="b-anchor" id="case"></span>
                 <picture class="b-case__pic">
 <!--                    <source media="(max-width: 767px)" srcset="assets/img/case-amazon-sm.jpg">-->
                     <source media="(min-width: 768px)" srcset="assets/img/cases/case-amazon.jpg">

@@ -132,7 +132,8 @@ __webpack_require__.r(__webpack_exports__);
 Object(element_closest__WEBPACK_IMPORTED_MODULE_1__["default"])(window);
 Object(_videoLazyLoad__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-lazy__video');
 SVGInject(document.querySelectorAll("img.svg_injectable"));
-object_fit_images__WEBPACK_IMPORTED_MODULE_4___default()();
+object_fit_images__WEBPACK_IMPORTED_MODULE_4___default()(); //debugger
+
 var anchorLinks = document.querySelectorAll('.js-link_anchor');
 
 var anchorLinkClickHandler = function anchorLinkClickHandler(e) {

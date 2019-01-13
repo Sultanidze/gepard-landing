@@ -1,4 +1,5 @@
 .b-target{
+    position: relative;
     margin: 0 15px;
     display: flex;
     flex-direction: column;
@@ -23,7 +24,7 @@
     }
     
     &s{
-        padding: 20px 0 60px;
+        padding: 37px 0 60px;
         background-image: url(../assets/img/targets-bg-left.jpg), url(../assets/img/targets-bg-right.jpg);
         background-position: left, right;
         background-repeat: no-repeat;
@@ -33,7 +34,7 @@
             @extend %wrapper;
         }
         &__title{
-            margin: 0 auto 55px;
+            margin: 0 auto 37px;
             text-align: center;
             text-transform: uppercase;
             font-size: 22px;

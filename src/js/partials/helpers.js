@@ -11,7 +11,7 @@ videolazy('.js-lazy__video');
 SVGInject(document.querySelectorAll("img.svg_injectable"));
 
 objectFitImages();
-
+//debugger
 const anchorLinks = document.querySelectorAll('.js-link_anchor');
 const anchorLinkClickHandler = function(e) {
     e.preventDefault();
