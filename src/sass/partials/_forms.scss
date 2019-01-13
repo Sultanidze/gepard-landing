@@ -78,6 +78,34 @@ input[type="checkbox"] {
     }
 }
 
-.b-form__popup{
-    
+form{
+    &.is-touched{
+        input:invalid{
+            color: $popup__text_error;
+        }
+    }
+    &.is-invalid{
+        .js-popup_invalid{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    }
+    &.is-error{
+        .js-popup_error{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    }
+    &.is-valid{
+        .js-popup_success{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    }
 }
+//.b-form__popup{
+//    
+//}

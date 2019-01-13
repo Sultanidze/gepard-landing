@@ -38,7 +38,10 @@
         }
         
         .b-form__popup{
-            
+            position: absolute;
+            left: 0;
+            top: calc(100% + 22px);
+            width: 100%;
         }
     }
     &__title{

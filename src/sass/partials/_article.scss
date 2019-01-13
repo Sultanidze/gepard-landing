@@ -12,13 +12,6 @@
         z-index: -1;
         @extend %gradient__dark_angled;
     }
-    &__anchor{
-        visibility: hidden;
-        position: absolute;
-        width: 0;
-        height: 0;
-        top: -#{$header__height_desktop};
-    }
     &__wr{
         @extend %wrapper;
         display: flex;

@@ -342,45 +342,67 @@
             </section>
             <section class="b-promo">
                 <div class="b-promo__wr">
-                    <form class="b-promo__form js-form_promo">
+                    <form class="b-promo__form js-form_promo" novalidate method="POST" action="/promo/">
                         <span class="b-promo__title">Give me more details</span>
                         <div class="b-wr_input">
-                            <input type="email" class="b-input" placeholder="email">
+                            <input type="email" class="b-input" placeholder="email" name="email" required>
                             <svg width="34" height="34">
                                 <use xlink:href="#email"></use>
                             </svg>
-    <!--                        <div class="b-message">Hi, congratulations! Somemething good has happened. thanks for being a great customer. let it be!</div>-->
                         </div>
                         <button class="b-btn" type="submit">
                             <span class="b-btn__wr_inner">
                                 <span class="b-btn__inner">Request Free Demo</span>
                             </span>
                         </button>
-<!--
-                        <div class="b-form__popup b-popup js-popup">
-                            <div class="b-popup__wr_icon">
-                                <svg class="b-popup__icon b-popup__icon_success" width="28" height="28">
-                                    <use xlink:href="#popup-success"></use>
-                                </svg>
-                                <svg class="b-popup__icon b-popup__icon_error" width="33" height="28">
-                                    <use xlink:href="#popup-warning"></use>
-                                </svg>
+                        <div class="b-popups">
+                            <div class="b-form__popup b-popup b-popup_error js-popup_error">
+                                <div class="b-popup__wr_icon">
+                                    <svg width="33" height="28">
+                                        <use xlink:href="#popup-warning"></use>
+                                    </svg>
+                                </div>
+                                <span class="b-popup__text js-popup__text">Please try again later.</span>
+                                <button class="b-popup__close js-popup_close" type="button">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-close"></use>
+                                    </svg>
+                                </button>
                             </div>
-                            <span class="b-popup__text js-popup__text"
-                            data-text-error="Please enter a valid email"
-                            data-text-success="Thank you for getting in touch. We'll get back to you in up to 2 business days."></span>
-                            <button class="b-popup__btn js-popup_close" type="button">
-                                <svg class="b-popup__icon b-popup__icon_error">
-                                    <use xlink:href="#popup-error"></use>
-                                </svg>
-                            </button>
+                            <div class="b-form__popup b-popup b-popup_error js-popup_invalid">
+                                <div class="b-popup__wr_icon">
+                                    <svg width="33" height="28">
+                                        <use xlink:href="#popup-warning"></use>
+                                    </svg>
+                                </div>
+                                <span class="b-popup__text js-popup__text">Please enter a valid email</span>
+    <!--
+                                <button class="b-popup__close js-popup_close" type="button">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-close"></use>
+                                    </svg>
+                                </button>
+    -->
+                            </div>
+                            <div class="b-form__popup b-popup b-popup_success js-popup_success">
+                                <div class="b-popup__wr_icon">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-success"></use>
+                                    </svg>
+                                </div>
+                                <span class="b-popup__text js-popup__text">Thank you for getting in touch. We'll get back to you in up to 2 business days.</span>
+                                <button class="b-popup__close js-popup_close" type="button">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-close"></use>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
--->
                     </form>
                 </div>
             </section>
             <article class="b-article">
-                <span class="b-article__anchor" id="syndicator"></span>
+                <span class="b-anchor" id="syndicator"></span>
                 <div class="b-article__wr">
                     <div class="b-article__container">
                         <img src="assets/img/syndicator.jpg" alt="" class="b-article__img">
@@ -397,7 +419,7 @@
                 </div>
             </article>
             <article class="b-article_reverse b-article_active">
-                <span class="b-article__anchor" id="pim"></span>
+                <span class="b-anchor" id="pim"></span>
                 <div class="b-article__wr">
                     <div class="b-article__container">
                         <img src="assets/img/pim.jpg" alt="" class="b-article__img">
@@ -506,7 +528,7 @@
             <section class="b-contactus">
                 <div class="b-contactus__wr">
                     <div class="b-contactus__title">Contact Us</div>
-                    <form class="b-form_contactus js-form_contactus" novalidate>
+                    <form class="b-form_contactus js-form_contactus is-popup_visible" novalidate method="POST">
                         <div class="b-contactus__block_checkboxes">
                             <div class="b-contactus__title_sub">Interested in*</div>
                             <label class="b-label_checkbox">
@@ -529,7 +551,7 @@
                         <div class="b-contactus__block_email">
                             <div class="b-contactus__title_sub">Business Email*</div>
                             <div class="b-wr_input">
-                                <input type="email" class="b-input" placeholder="email">
+                                <input type="email" class="b-input" placeholder="email" name="email" required>
                                 <svg width="34" height="34">
                                     <use xlink:href="#email"></use>
                                 </svg>
@@ -540,26 +562,49 @@
                                 </span>
                             </button>
                         </div>
-<!--
-                        <div class="b-form__popup b-popup js-popup">
-                            <div class="b-popup__wr_icon">
-                                <svg class="b-popup__icon b-popup__icon_success" width="28" height="28">
-                                    <use xlink:href="#popup-success"></use>
-                                </svg>
-                                <svg class="b-popup__icon b-popup__icon_error" width="33" height="28">
-                                    <use xlink:href="#popup-error"></use>
-                                </svg>
+                        <div class="b-popups">
+                            <div class="b-form__popup b-popup b-popup_error js-popup_invalid">
+                                <div class="b-popup__wr_icon">
+                                    <svg width="33" height="28">
+                                        <use xlink:href="#popup-warning"></use>
+                                    </svg>
+                                </div>
+                                <span class="b-popup__text js-popup__text">Please enter a valid email and choose at least one category of interest</span>
+    <!--
+                                <button class="b-popup__close js-popup_close" type="button">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-close"></use>
+                                    </svg>
+                                </button>
+    -->
                             </div>
-                            <span class="b-popup__text js-popup__text"
-                            data-text-error="Please enter a valid email and choose at least one category of interest "
-                            data-text-success="Thank you for getting in touch. We'll get back to you in up to 2 business days."></span>
-                            <button class="b-popup__btn js-popup_close" type="button">
-                                <svg class="b-popup__icon b-popup__icon_error">
-                                    <use xlink:href="#popup-warning"></use>
-                                </svg>
-                            </button>
+                            <div class="b-form__popup b-popup b-popup_error js-popup_error">
+                                <div class="b-popup__wr_icon">
+                                    <svg width="33" height="28">
+                                        <use xlink:href="#popup-warning"></use>
+                                    </svg>
+                                </div>
+                                <span class="b-popup__text js-popup__text">Please try again later.</span>
+                                <button class="b-popup__close js-popup_close" type="button">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-close"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="b-form__popup b-popup b-popup_success js-popup_success">
+                                <div class="b-popup__wr_icon">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-success"></use>
+                                    </svg>
+                                </div>
+                                <span class="b-popup__text js-popup__text">Thank you for getting in touch. We'll get back to you in up to 2 business days.</span>
+                                <button class="b-popup__close js-popup_close" type="button">
+                                    <svg width="28" height="28">
+                                        <use xlink:href="#popup-close"></use>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
--->
                     </form>
                 </div>
             </section>

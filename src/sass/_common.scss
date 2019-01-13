@@ -60,3 +60,12 @@ img {
 img[data-src], img[data-src-lg] {
     opacity: 0;
 }
+
+
+.b-anchor{
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -#{$header__height_desktop-scrolled};
+}
