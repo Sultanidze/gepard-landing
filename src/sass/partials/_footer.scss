@@ -6,9 +6,28 @@
         @extend %wrapper_narrow;
         padding-top: 85px;
         padding-bottom: 75px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav{
+        
+    }
+    &__nav_social{
+        margin-left: 15px;
+        display: flex;
+        
+        li{
+            + li{
+                margin-left: 20px;
+            }
+        }
     }
     
     &__list{
+        + .b-footer__list{
+            margin-top: 20px;
+        }
         > li{
             display: inline-block;
             color: $text_dark;
@@ -21,7 +40,7 @@
         }
         
         &_contacts {
-            margin-bottom: 20px;
+//            margin-bottom: 20px;
             > li{
                 + li{
                     &:before{
@@ -61,5 +80,20 @@
         &_nav{
             text-transform: uppercase;
         }
+        &_social{
+            display: block;
+            padding: 5px;
+            svg{
+                fill: currentColor
+            }
+        }
+    }
+}
+
+a.b-footer__link{
+    transition: opacity $time_trans;
+    
+    &:hover{
+        opacity: .7;
     }
 }

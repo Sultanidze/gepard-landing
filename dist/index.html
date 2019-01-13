@@ -84,7 +84,10 @@
                         <source media="(min-width: 768px)" srcset="assets/img/video-bg.jpg">
                         <img src="assets/img/video-bg.jpg" alt="">
                     </picture>
-                    <video src="#" data-src="assets/bg.webm" autoplay loop muted class="b-video js-lazy__video">
+                    <video class="b-video js-lazy__video" width="1280" height="720" autoplay loop muted playsinline>
+                        <source data-src="./assets/bg.mp4"  type="video/mp4">
+                        <source data-src="./assets/bg.webm"  type="video/webm">
+                        <source data-src="./assets/bg.ogv"  type="video/ogg">
                     </video>
                     <div class="b-video__overlay"></div>
                 </div>
@@ -611,26 +614,56 @@
         </div>
         <footer class="b-footer">
             <div class="b-footer__wr">
-                <ul class="b-footer__list b-footer__list_contacts">
+                <div class="b-footer__nav">
+                    <ul class="b-footer__list b-footer__list_contacts">
+                        <li>
+    <!--                        <span class="b-footer__link b-footer__link_contact">4A Mytropolyta Andreia Sheptytskoho Street, Kyiv, 02002, Ukraine</span>-->
+                            <span class="b-footer__link b-footer__link_contact">Copyright © 2019 Gepard.  All rights reserved</span>
+                        </li> 
+    <!--
+                        <li>
+                            <a href="tel:" class="b-footer__link b-footer__link_contact">phone</a>
+                        </li>
+    -->
+                        <li>
+                            <a href="mailto:info@gepard.io" class="b-footer__link b-footer__link_contact">info@gepard.io</a>
+                        </li>
+                    </ul>
+    <!--
+                    <ul class="b-footer__list b-footer__list_links">
+                        <li>
+                            <a href="#" class="b-footer__link b-footer__link_nav">PRIVACY POLICY</a>
+                        </li>
+                        <li>
+                            <a href="#" class="b-footer__link b-footer__link_nav">TERMS OF SERVICE</a>
+                        </li>
+                        <li>
+                            <a href="#" class="b-footer__link b-footer__link_nav">SITEMAP</a>
+                        </li>
+                    </ul>
+    -->
+                </div>
+                <ul class="b-footer__nav_social">
                     <li>
-                        <span class="b-footer__link b-footer__link_contact">4A Mytropolyta Andreia Sheptytskoho Street, Kyiv, 02002, Ukraine</span>
-                    </li> 
-                    <li>
-                        <a href="tel:" class="b-footer__link b-footer__link_contact">phone</a>
+                        <a href="" class="b-footer__link_social b-footer__link">
+                            <svg width="51" height="51">
+                                <use xlink:href="#linkedin"></use>
+                            </svg>
+                        </a>
                     </li>
                     <li>
-                        <a href="mailto:info@gepard.io" class="b-footer__link b-footer__link_contact">info@gepard.io</a>
-                    </li>
-                </ul>
-                <ul class="b-footer__list b-footer__list_links">
-                    <li>
-                        <a href="#" class="b-footer__link b-footer__link_nav">PRIVACY POLICY</a>
-                    </li>
-                    <li>
-                        <a href="#" class="b-footer__link b-footer__link_nav">TERMS OF SERVICE</a>
+                        <a href="" class="b-footer__link_social b-footer__link">
+                            <svg width="51" height="51">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="b-footer__link b-footer__link_nav">SITEMAP</a>
+                        <a href="" class="b-footer__link_social b-footer__link">
+                            <svg width="51" height="51">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
             </div>

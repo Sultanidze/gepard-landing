@@ -1842,22 +1842,46 @@ form.is-valid .js-popup_success {
   background-color: #221724; }
   .b-footer__wr {
     padding-top: 85px;
-    padding-bottom: 75px; }
+    padding-bottom: 75px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .b-footer__nav_social {
+    margin-left: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .b-footer__nav_social li + li {
+      margin-left: 20px; }
+  .b-footer__list + .b-footer__list {
+    margin-top: 20px; }
   .b-footer__list > li {
     display: inline-block;
     color: #777578; }
     .b-footer__list > li + li:before {
       display: inline-block; }
-  .b-footer__list_contacts {
-    margin-bottom: 20px; }
-    .b-footer__list_contacts > li + li:before {
-      content: '';
-      margin: 0 0.19em;
-      height: 1.1em;
-      width: 2px;
-      background-color: currentColor;
-      font-size: 10px;
-      vertical-align: -10%; }
+  .b-footer__list_contacts > li + li:before {
+    content: '';
+    margin: 0 0.19em;
+    height: 1.1em;
+    width: 2px;
+    background-color: currentColor;
+    font-size: 10px;
+    vertical-align: -10%; }
   .b-footer__list_links > li + li:before {
     content: '●';
     vertical-align: middle;
@@ -1870,5 +1894,16 @@ form.is-valid .js-popup_success {
     font-weight: 700; }
     .b-footer__link_nav {
       text-transform: uppercase; }
+    .b-footer__link_social {
+      display: block;
+      padding: 5px; }
+      .b-footer__link_social svg {
+        fill: currentColor; }
+
+a.b-footer__link {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+  a.b-footer__link:hover {
+    opacity: .7; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,7 +6,7 @@ import objectFitImages from 'object-fit-images';
 import jump from 'jump.js'
 
 elementClosest(window);
-videolazy();
+videolazy('.js-lazy__video');
 
 SVGInject(document.querySelectorAll("img.svg_injectable"));
 

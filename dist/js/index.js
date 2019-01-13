@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 Object(element_closest__WEBPACK_IMPORTED_MODULE_1__["default"])(window);
-Object(_videoLazyLoad__WEBPACK_IMPORTED_MODULE_2__["default"])();
+Object(_videoLazyLoad__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-lazy__video');
 SVGInject(document.querySelectorAll("img.svg_injectable"));
 object_fit_images__WEBPACK_IMPORTED_MODULE_4___default()();
 var anchorLinks = document.querySelectorAll('.js-link_anchor');
@@ -216,17 +216,21 @@ __webpack_require__.r(__webpack_exports__);
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-function videoLazyLoad() {
-  if (is_mobile__WEBPACK_IMPORTED_MODULE_0___default()()) return; // do nothing if mobile browser
+function videoLazyLoad(videoSelector) {
+  console.log(is_mobile__WEBPACK_IMPORTED_MODULE_0___default()());
+  if (is_mobile__WEBPACK_IMPORTED_MODULE_0___default()() && window.matchMedia("(max-width: 767px)").matches) return; // do nothing if mobile browser
 
-  var videos = document.querySelectorAll('.js-lazy__video');
+  var videos = document.querySelectorAll(videoSelector);
 
   if (videos.length) {
-    videos.forEach = [].forEach;
     videos.forEach(function (video) {
-      video.setAttribute('src', video.getAttribute('data-src'));
-      video.removeAttribute('data-src');
-      video.play(); // start playing video
+      //            debugger;
+      var sources = video.children;
+      sources.forEach = [].forEach;
+      sources.forEach(function (source) {
+        source.src = source.dataset.src;
+        video.load();
+      }); //            video.play();    // start playing video
     });
   }
 }
