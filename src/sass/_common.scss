@@ -48,6 +48,10 @@ html, body{
 //    height: 100%;
     display: flex;
     flex-direction: column;
+    
+    @include media('<desktop'){
+        padding-top: $header__height_tablet;
+    }
 }
 
 //lazy load:
@@ -67,5 +71,9 @@ img[data-src], img[data-src-lg] {
     position: absolute;
     width: 0;
     height: 0;
-    top: -#{$header__height_desktop-scrolled};
+    top: -$header__height_desktop-scrolled;
+    
+    @include media('<desktop'){
+        top: -$header__height_tablet;
+    }
 }

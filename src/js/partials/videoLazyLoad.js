@@ -5,8 +5,8 @@
 import isMobile from 'is-mobile';
 
 function videoLazyLoad(videoSelector){
-    console.log(isMobile())
-    if(isMobile() && window.matchMedia("(max-width: 767px)").matches) return;  // do nothing if mobile browser
+//    console.log(isMobile())
+    if(isMobile() || window.matchMedia("(max-width: 767px)").matches) return;  // do nothing if mobile browser
     
     var videos = document.querySelectorAll(videoSelector);
     if (videos.length){

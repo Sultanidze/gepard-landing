@@ -132,8 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 Object(element_closest__WEBPACK_IMPORTED_MODULE_1__["default"])(window);
 Object(_videoLazyLoad__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-lazy__video');
 SVGInject(document.querySelectorAll("img.svg_injectable"));
-object_fit_images__WEBPACK_IMPORTED_MODULE_4___default()(); //debugger
-
+object_fit_images__WEBPACK_IMPORTED_MODULE_4___default()();
 var anchorLinks = document.querySelectorAll('.js-link_anchor');
 
 var anchorLinkClickHandler = function anchorLinkClickHandler(e) {
@@ -218,8 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function videoLazyLoad(videoSelector) {
-  console.log(is_mobile__WEBPACK_IMPORTED_MODULE_0___default()());
-  if (is_mobile__WEBPACK_IMPORTED_MODULE_0___default()() && window.matchMedia("(max-width: 767px)").matches) return; // do nothing if mobile browser
+  //    console.log(isMobile())
+  if (is_mobile__WEBPACK_IMPORTED_MODULE_0___default()() || window.matchMedia("(max-width: 767px)").matches) return; // do nothing if mobile browser
 
   var videos = document.querySelectorAll(videoSelector);
 
@@ -1354,7 +1353,7 @@ __webpack_require__.r(__webpack_exports__);
 var headerNode = document.querySelector('.js-header');
 
 function headerScrollHandler(e) {
-  var scrollY = window.scrollY;
+  var scrollY = window.scrollY; //    const scrollBreakpoint = window.matchMedia("(max-width: 767px)").matches ? 144 : 0;
 
   if (scrollY >= 144) {
     headerNode.classList.add('state_scrolled');

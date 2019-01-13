@@ -46,13 +46,14 @@
     "webpack-stream": "^5.1.1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "nodelist-foreach-polyfill": "^1.2.0",
-    "element-closest": "^3.0.0",
-    "object-fit-images": "^3.2.3",
-    "is-mobile": "^1.0.0",
     "@iconfu/svg-inject": "^1.2.1",
+    "element-closest": "^3.0.0",
+    "include-media": "^1.4.9",
+    "is-mobile": "^1.0.0",
     "jump.js": "^1.0.2",
+    "nodelist-foreach-polyfill": "^1.2.0",
+    "normalize.css": "^8.0.1",
+    "object-fit-images": "^3.2.3",
     "tiny-slider": "^2.9.1"
   }
 }
