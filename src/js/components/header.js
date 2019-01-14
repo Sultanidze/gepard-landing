@@ -13,4 +13,4 @@ function headerScrollHandler(e){
 
 window.addEventListener('scroll', headerScrollHandler, {passive: true})
 
-export default headerNode;
+export {headerNode};
