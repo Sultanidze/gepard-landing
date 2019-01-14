@@ -14,7 +14,8 @@ export default {
     },
     resolve: {
         alias: {
-            "@comp": path.resolve(__dirname, "src/js/components")
+            "@comp": path.resolve(__dirname, "src/js/components"),
+            "@js": path.resolve(__dirname, "src/js/")
         },
         extensions: ['.js'],
         modules: [

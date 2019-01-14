@@ -256,6 +256,9 @@
             }
             @include media('<desktop'){
                 padding: 15px;
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
             }
             
             &:before, &:after{
@@ -366,6 +369,25 @@ span.b-nav__link{
     }
 }
 
+.b-submenu__back{
+    display: none;
+    
+    @include media('<desktop'){
+        display: flex;
+    }
+    
+    .b-nav__link_sub{
+//        padding-left: 0;
+        
+        &:before{
+            content: '';
+            @extend %menu__icon_right;
+            margin-right: 15px;
+            transform: rotate(180deg)
+        }
+    }
+}
+
 .is-menu_open{
     @include media('<desktop'){
         .b-header:before{
@@ -379,7 +401,7 @@ span.b-nav__link{
                     transform: rotate(-45deg);
                 }
                 &:before{
-                    width: 28.2px;
+                    width: 28px;
                     transform-origin: 100%;
                 }
                 &:after{
@@ -389,7 +411,7 @@ span.b-nav__link{
                 }
                 > span{
                     left: -4px;
-                    width: 28.2px;
+                    width: 28px;
                     transform: rotate(45deg);
                 }
             }

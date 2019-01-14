@@ -51,8 +51,8 @@ html, body{
     
     @include media('<desktop'){
         padding-top: $header__height_tablet;
-        height: 100%;
-        overflow: auto;
+//        height: 100%;
+//        overflow: auto;
     }
 }
 
