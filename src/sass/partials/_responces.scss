@@ -12,6 +12,10 @@
         max-width: 860px;
         width: 100%;
         padding: 0 55px;
+        
+        @include media('<tabletSm'){
+            padding: 0;
+        }
     }
     &__face{
         margin: 0 auto 20px;
@@ -28,6 +32,11 @@
         font-weight: 500;
         user-select: none;
         
+        @include media('<tabletSm'){
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
         &:before{
             content: "";
             position: absolute;
@@ -35,14 +44,21 @@
             bottom: calc(100% + 30px);
             width: 22px;
             height: 19px;
-            background-image: #{url64('src/assets/img/base64/quote.png')}
+            background-image: #{url64('src/assets/img/base64/quote.png')};
             
+            @include media('<tabletSm'){
+                content: none;
+            }
         }
     }
     &__position{
         display: block;
         font-weight: 500;
         user-select: none;
+        
+        @include media('<tabletSm'){
+            margin-bottom: 20px;    
+        }
     }
     &__name{
         display: block;
@@ -86,13 +102,18 @@
     }
     &-controls{
         position: absolute;
-        top: 0;
+        top: 45px;
         bottom: 0;
         left: -15px;
         right: -15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
+        @include media('<tabletSm'){
+            top: 40px;
+            bottom: auto;
+        }
         
         button{
             position: relative;

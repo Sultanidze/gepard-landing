@@ -41,6 +41,10 @@
         font-size: 22px;
         font-weight: 500;
         
+        @include media('<tabletSm'){
+            margin-bottom: 15px;
+        }
+        
         &_sub{
             margin-bottom: 46px;
             font-size: 22px;
@@ -61,6 +65,10 @@
             @include media('<desktop'){
                 width: 50%;
             }
+            @include media('<tabletSm'){
+                margin-bottom: 60px;
+                width: 100%;
+            }
             
             .b-contactus__title_sub{
                 margin-bottom: 36px;
@@ -79,6 +87,9 @@
         
             @include media('<desktop'){
                 width: 50%;
+            }
+            @include media('<tabletSm'){
+                width: 100%;
             }
             
             .b-contactus__title_sub{
@@ -104,11 +115,19 @@
     justify-content: space-between;
     flex-wrap: wrap;
     
+    @include media('<tabletSm'){
+        flex-direction: column;    
+    }
+    
     .b-form__popup{
         position: absolute;
         left: 0;
         bottom: calc(100% + 3px);
         z-index: 1;
         width: 100%;
+        
+        @include media('<tabletSm'){
+            bottom: 149px;
+        }
     }
 }

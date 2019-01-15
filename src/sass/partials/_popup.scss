@@ -35,6 +35,10 @@
         border: none;
         outline: none;
         cursor: pointer;
+        
+        @include media('<tabletSm'){
+            display: none;
+        }
     }
     
     &_success{

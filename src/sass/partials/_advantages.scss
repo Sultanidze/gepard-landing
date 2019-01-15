@@ -11,6 +11,10 @@
         width: calc(50% - 56px);
         font-size: 14px;
     }
+    @include media('<tabletSm'){
+        margin: 0 0 35px;
+        width: 100%;
+    }
     
     &__wr_icon{
 //        margin-left: 48px;
@@ -24,7 +28,7 @@
         color: $active;        
         
         @include media('<desktop'){
-            margin-right: 20px;
+            margin-right: 18px;
             width: 50px;    
         }
         
@@ -44,6 +48,9 @@
             text-transform: none;
             line-height: normal;
             font-size: 22px;
+        }
+        @include media('<tabletSm'){
+            font-size: 18px;
         }
     }
     &__descr{
@@ -65,6 +72,9 @@
             @include media('<desktop'){
                 padding-bottom: 20px;
             }
+            @include media('<tabletSm'){
+                padding-top: 40px;
+            }
         }
         &__title{
 //            margin-left: 47px;
@@ -76,6 +86,10 @@
             @include media('<desktop'){
                 margin-bottom: 43px;
             }
+            @include media('<tabletSm'){
+                margin-bottom: 30px;
+                padding-left: 68px;
+            }
         }
         &__content{
             margin: 0 -60px;
@@ -84,6 +98,9 @@
         
             @include media('<desktop'){
                 margin: 0;
+            }
+            @include media('<tabletSm'){
+                flex-direction: column;
             }
         }
     }

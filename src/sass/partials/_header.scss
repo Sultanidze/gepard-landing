@@ -87,6 +87,9 @@
             background-color: $white;
             transition: transform $time-trans;
         }
+        @include media('<tabletSm'){
+            width: 100%;
+        }
     }
 }
 .b-link_logo{

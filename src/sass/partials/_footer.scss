@@ -13,13 +13,24 @@
         @include media('<desktop'){
             padding: 50px 32px 55px;
         }
+        @include media('<tabletSm'){
+            flex-direction: column;
+            padding-left: 17px;
+            padding-right: 17px;
+        }
     }
     &__nav{
-        
+        @include media('<tabletSm'){
+            margin-bottom: 15px;
+        }
     }
     &__nav_social{
         margin-left: 15px;
         display: flex;
+        
+        @include media('<tabletSm'){
+            margin-left: 0;
+        }
         
         li{
             + li{
@@ -45,6 +56,10 @@
         
         &_contacts {
 //            margin-bottom: 20px;
+            @include media('<tabletSm'){
+                display: flex;
+                flex-direction: column;
+            }
             > li{
                 + li{
                     &:before{
@@ -55,6 +70,10 @@
                         background-color: currentColor;
                         font-size: 10px;
                         vertical-align: -10%;
+                        
+                        @include media('<tabletSm'){
+                            display: none;
+                        }
                     }
                 }
             }

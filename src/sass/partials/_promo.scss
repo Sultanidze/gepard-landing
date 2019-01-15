@@ -5,7 +5,7 @@
         
     @include media('<desktop'){
         min-height: 0;
-        padding: 50px 0 75px;
+        padding: 60px 0 75px;
     }
     
     &:before{
@@ -58,8 +58,8 @@
                 width: calc(50% - 16px);
             }
             @include media('<tabletSm'){
-                margin-left: 0;
-                margin-right: 0;
+                margin: 0 0 20px;
+                
                 width: 100%;
             }
         }
@@ -101,6 +101,9 @@
             margin-bottom: 15px;
             width: 100%;
             text-align: center;
+        }
+        @include media('<tabletSm'){
+            margin-bottom: 25px;
         }
     }
     

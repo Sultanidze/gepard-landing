@@ -5,6 +5,9 @@
     @include media('<desktop'){
         padding-top: 60px;
     }
+    @include media('<tabletSm'){
+        padding: 40px 0 50px;
+    }
     
     &:before{
         content: '';
@@ -31,6 +34,10 @@
             flex-direction: column;
             padding: 0 43px;
         }
+        @include media('<tabletSm'){
+            margin-bottom: 30px;
+            padding: 0;
+        }
     }
     &__img{
         margin-bottom: 40px;
@@ -42,6 +49,9 @@
             width: 100%;
             object-position: center;
             font-family: 'object-fit:contain;object-position: center';
+        }
+        @include media('<tabletSm'){
+            margin-bottom: 20px;
         }
     }
     &__content{
@@ -60,10 +70,17 @@
         @include media('<desktop'){
             margin-bottom: 15px;
         }
+        @include media('<tabletSm'){
+            margin-bottom: 9px;
+        }
     }
     &__descr{
         color: $white;
         font-weight: 500;
+        
+        @include media('<tabletSm'){
+            font-size: 14px;
+        }
     }
     
     .b-btn{
