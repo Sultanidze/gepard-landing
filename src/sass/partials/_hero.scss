@@ -22,6 +22,10 @@
 //        background-color: $black;
 //        opacity: .5;
 //    }
+    @include media('<desktop'){
+        height: calc(100vh - #{$header__height_tablet});
+        max-height: calc(768px - #{$header__height_tablet});
+    }
     
     &__content{
         position: relative;
@@ -35,6 +39,11 @@
         letter-spacing: 0.102em;
         font-weight: 600;
         text-transform: uppercase;
+        
+        @include media('<desktop'){
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
     &__descr{
         margin-bottom: 35px;
@@ -43,6 +52,11 @@
         text-align: center;
         font-size: 16px;
         letter-spacing: 0.008em;
+        
+        @include media('<desktop'){
+            padding: 0 5%;
+            font-weight: 500;
+        }
     }
     &__btns{
         display: flex;

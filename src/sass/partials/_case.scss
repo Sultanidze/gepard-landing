@@ -4,8 +4,10 @@
     &__pic{
         display: block;
         img{
-            min-height: 270px;
+            min-height: 250px;
             width: 100%;
+            object-fit: cover;
+            font-family: 'object-fit:cover';
         }
     }
     &__container{
@@ -25,21 +27,36 @@
 //        margin: 0 70px;
         margin: 0 6%;
         width: 305px;
+        
+        @include media('<desktop'){
+            margin: 0 43px;
+            width: 262px;
+        }
     }
     &__common{
-            margin-bottom: 20px;
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
+        
+        @include media('<desktop'){
+            margin-bottom: 10px;
+        }
     }
     &__logo{
         margin-right: 10px;
     }
     &__title{
         margin-bottom: 40px;
+        text-transform: uppercase;
         line-height: 1.1;
         font-size: 22px;
         font-weight: 500;
         color: $active;
+        
+        @include media('<desktop'){
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
         
         &_common{
             font-family: 'Caveat', cursive;

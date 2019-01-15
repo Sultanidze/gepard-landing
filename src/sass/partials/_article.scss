@@ -1,6 +1,10 @@
 .b-article{
     position: relative;
     padding: 80px 0 55px;
+        
+    @include media('<desktop'){
+        padding-top: 60px;
+    }
     
     &:before{
         content: '';
@@ -22,20 +26,40 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
+        
+        @include media('<desktop'){
+            flex-direction: column;
+            padding: 0 43px;
+        }
     }
     &__img{
+        margin-bottom: 40px;
         object-fit: contain;
         object-position: top;
         font-family: 'object-fit: contain; object-position: top';
+        
+        @include media('<tabletSm'){
+            width: 100%;
+            object-position: center;
+            font-family: 'object-fit:contain;object-position: center';
+        }
     }
     &__content{
         margin-right: 50px;
+        
+        @include media('<desktop'){
+            margin: 0;
+        }
     }
     &__title{
         margin-bottom: 40px;
         font-size: 22px;
         font-weight: 500;
         color: $active;
+        
+        @include media('<desktop'){
+            margin-bottom: 15px;
+        }
     }
     &__descr{
         color: $white;
@@ -51,10 +75,18 @@
         .b-article{
             &__container{
                 flex-direction: row;
+                
+                @include media('<desktop'){
+                    flex-direction: column;
+                }
             }
             &__content{
                 margin-right: 0;
                 margin-left: 50px;
+                
+                @include media('<desktop'){
+                    margin: 0;
+                }
             }
         }
     }

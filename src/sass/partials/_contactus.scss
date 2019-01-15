@@ -4,6 +4,10 @@
     background-image: url(../assets/img/contactus-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+        
+    @include media('<desktop'){
+        padding: 50px 0 50px;
+    }
     
     &:before{
         content: '';
@@ -19,6 +23,16 @@
     &__wr{
         @extend %wrapper_narrow;
         position: relative;
+        
+        @include media('<desktop'){
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        
+        @include media('<tabletSm'){
+            padding-left: 17px;
+            padding-right: 17px;
+        }
     }
     
     &__title{
@@ -32,6 +46,10 @@
             font-size: 22px;
             font-weight: 500;
             color: $white;
+
+            @include media('<desktop'){
+                margin-bottom: 20px;
+            }
         }
     }
     &__block{
@@ -39,9 +57,17 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+        
+            @include media('<desktop'){
+                width: 50%;
+            }
             
             .b-contactus__title_sub{
                 margin-bottom: 36px;
+        
+                @include media('<desktop'){
+                    margin-bottom: 20px;
+                }
             }
             
             .b-label_checkbox{
@@ -50,6 +76,10 @@
         }
         &_email{
             width: 595px;
+        
+            @include media('<desktop'){
+                width: 50%;
+            }
             
             .b-contactus__title_sub{
                 padding-left: 5px;
@@ -58,6 +88,11 @@
             .b-wr_input{
                 margin-bottom: 25px;
                 margin-left: 5px;
+            }
+            .b-btn{
+                @include media('<desktop'){
+                    width: 100%;
+                }
             }
         }
     }

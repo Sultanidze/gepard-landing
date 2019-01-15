@@ -2,10 +2,20 @@
     
     &s{
         padding: 135px 0 100px;
+        
+        @include media('<desktop'){
+            padding: 60px 0 60px;
+            overflow: hidden;
+        }
+        
         &__wr{
             @extend %wrapper_narrow;
             display: flex;
             align-items: flex-start;
+            
+            @include media('<desktop'){
+                margin: 0 -17px;
+            }
         }
         &__logos{
             margin: 0 -17px;
@@ -16,12 +26,22 @@
             justify-content: center;
             align-items: center;
             
+            @include media('<desktop'){
+                margin: -10px 0 0;
+                width: 50%
+            }
+            
             img{
                 margin: 10px 17px;
             }
         }
         &__content{
             margin-left: 135px;
+            
+            @include media('<desktop'){
+                margin: 0 17px;
+                width: calc(50% - 17px);
+            }
         }
         &__title{
             margin-bottom: 10px;

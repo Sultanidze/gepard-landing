@@ -8,9 +8,18 @@ $height_logo:    140px;
     display: flex;
     align-items: center;
     justify-content: center;
+        
+    @include media('<desktop'){
+        width: 190px;
+    }
     
     > img{
         max-height: 60px;
+        
+        @include media('<desktop'){
+            max-height: 40px;
+            max-width: 100%;
+        }
     }
     
     &s{
@@ -78,6 +87,11 @@ $height_logo:    140px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+        
+            @include media('<desktop'){
+                margin-left: -30px;
+                margin-right: -30px;
+            }
         }
     }
 }

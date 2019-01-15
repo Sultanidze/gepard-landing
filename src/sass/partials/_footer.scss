@@ -9,6 +9,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
+        @include media('<desktop'){
+            padding: 50px 32px 55px;
+        }
     }
     &__nav{
         

@@ -8,6 +8,12 @@
     background-color: rgba($white, 0.42);
     box-shadow: 0 0 24px rgba($black, 0.22);
     transition: background-color $time_trans;
+        
+    @include media('<desktop'){
+        margin-bottom: 30px;
+        width: 100%;
+        padding: 15px 30px 25px;
+    }
 
     &:hover{
         background-color: $bg_dark;
@@ -30,6 +36,13 @@
         background-repeat: no-repeat;
         background-size: contain;
         
+        @include media('<desktop'){
+            padding-bottom: 50px;
+            background-image: url(../assets/img/targets-bg-left-top.jpg), url(../assets/img/targets-bg-right-top.jpg), url(../assets/img/targets-bg-right-bottom.jpg), url(../assets/img/targets-bg-left-bottom.jpg);
+            background-position: left top, right top, right bottom, left bottom;
+            background-size: auto;
+        }
+        
         &__wr{
             @extend %wrapper;
         }
@@ -44,12 +57,21 @@
             margin: 0 -15px;
             display: flex;
             justify-content: space-around;
+        
+            @include media('<desktop'){
+                margin: 0;
+                flex-direction: column;
+            }
         }
     }
 
     &__header{
         margin-bottom: 22px;
         display: flex;
+        
+        @include media('<desktop'){
+            align-self: center;
+        }
     }
     
     &__wr_icon{
@@ -71,6 +93,11 @@
         margin-bottom: 45px;
         font-weight: 500;
         color: $text_grey;
+        
+        @include media('<desktop'){
+            text-align: center;
+            font-size: 14px;
+        }
     }
 
     &__btn{

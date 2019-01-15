@@ -1,3 +1,27 @@
+// include media defaults
+$breakpoints: (
+  'phoneSm': 320px,
+//  'phoneMd': 376px,
+//  'phoneLg': 414px,
+  'tabletSm': 768px,
+  'tabletLg': 1024px,
+  'desktop': 1280px,
+  'laptop': 1366px,
+  'hd': 1920px,
+);
+
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
+  'ie': 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)'
+);
+
+
 // Colours:
 $black:                 #000000;
 $checked:               #e64c37;
@@ -54,26 +78,3 @@ $time_trans:        0.3s;
 %gradient__dark_angled{
     @include gradient__dark_angled;
 }
-
-// include media defaults
-$breakpoints: (
-  'phoneSm': 320px,
-//  'phoneMd': 376px,
-//  'phoneLg': 414px,
-  'tabletSm': 768px,
-  'tabletLg': 1024px,
-  'desktop': 1280px,
-  'laptop': 1366px,
-  'hd': 1920px,
-);
-
-$media-expressions: (
-  'screen': 'screen',
-  'print': 'print',
-  'handheld': 'handheld',
-  'landscape': '(orientation: landscape)',
-  'portrait': '(orientation: portrait)',
-  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
-  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
-  'ie': 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)'
-);
