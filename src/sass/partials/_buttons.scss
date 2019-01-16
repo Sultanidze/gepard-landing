@@ -7,6 +7,7 @@
     padding: 5px;
     border-radius: 31px;
     box-shadow: 0 0 24px rgba($black, 0);
+    transition: box-shadow $time_trans;
     outline: none;
     
     &:before{
@@ -19,6 +20,7 @@
         z-index: 0;
         border-radius: inherit;
         opacity: 0;
+        transition: opacity $time_trans;
         background-image: linear-gradient(to right, $white, $white); 
     }
     
@@ -34,6 +36,7 @@
         padding: 4px;
         cursor: pointer;
         box-shadow: 0 0 24px rgba($black, .22);
+        transition: box-shadow $time_trans;
         
         &:before{
             @extend %gradient__active_angled;
@@ -46,6 +49,7 @@
             z-index: 0;
             border-radius: inherit;
             opacity: 0;
+            transition: opacity $time_trans;
         }
     }
     &__inner{
@@ -63,7 +67,7 @@
         font-size: 12px;
         font-weight: 600;
         background-color: transparent;
-//        transition: color $time_trans;
+        transition: color $time_trans;
     }
     
     &_dark{

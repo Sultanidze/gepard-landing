@@ -24,13 +24,58 @@
         
         .b-target{
             &__wr_icon,
+            &__descr,
             &__title{
-                color: $text_grey;
+//                color: $text_grey;
+                color: $white;
             }
             &__btn{
                 @extend %btn_hover;
             }
         }
+    }
+
+    &__header{
+        margin-bottom: 22px;
+        display: flex;
+        
+        @include media('<desktop'){
+            align-self: center;
+        }
+    }
+    
+    &__wr_icon{
+        width: 60px;
+        height: 41px;
+        color: $active;
+        transition: color $time_trans;
+        
+        svg{
+            fill: currentColor;
+        }
+    }
+    
+    &__title{
+        font-size: 22px;
+        color: $black;
+        transition: color $time_trans;
+    }
+
+    &__descr{
+        margin-bottom: 45px;
+        font-weight: 500;
+        color: $text_grey;
+        transition: color $time_trans;
+        
+        @include media('<desktop'){
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    &__btn{
+        margin-top: auto;
+        align-self: center;
     }
     
     &s{
@@ -80,45 +125,5 @@
                 margin-right: -17px;
             }
         }
-    }
-
-    &__header{
-        margin-bottom: 22px;
-        display: flex;
-        
-        @include media('<desktop'){
-            align-self: center;
-        }
-    }
-    
-    &__wr_icon{
-        width: 60px;
-        height: 41px;
-        color: $active;
-        
-        svg{
-            fill: currentColor;
-        }
-    }
-    
-    &__title{
-        font-size: 22px;
-        color: $black;
-    }
-
-    &__descr{
-        margin-bottom: 45px;
-        font-weight: 500;
-        color: $text_grey;
-        
-        @include media('<desktop'){
-            text-align: center;
-            font-size: 14px;
-        }
-    }
-
-    &__btn{
-        margin-top: auto;
-        align-self: center;
     }
 }

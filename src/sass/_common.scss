@@ -42,6 +42,10 @@ html, body{
     height: 100%;
     font-family: "Montserrat", "Open Sans", Helvetica, Arial, sans-serif;
     line-height: 1.8;
+    
+    &.is-menu_open{
+        overflow: hidden;
+    }
 }
 .b-container_page{
     padding-top: $header__height_desktop;

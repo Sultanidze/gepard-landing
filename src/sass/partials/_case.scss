@@ -51,6 +51,7 @@
         margin-bottom: 20px;
         display: flex;
         align-items: center;
+//        color: $active;
         
         @include media('<desktop'){
             margin-bottom: 10px;
@@ -58,6 +59,7 @@
     }
     &__logo{
         margin-right: 10px;
+//        fill: currentColor;
     }
     &__title{
         margin-bottom: 40px;
@@ -101,6 +103,10 @@
     }
     &_dark{
         .b-case{
+//            &__common{
+//                color: 
+//                $gradient__dark_end;
+//            }
             &__title{
                 color: $gradient__dark_end;
 

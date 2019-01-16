@@ -4934,7 +4934,7 @@ var url = form.action;
 var method = form.method;
 
 var isInterestsValid = function isInterestsValid() {
-  return checkboxNodes.some(function (checkbox) {
+  return _toConsumableArray(checkboxNodes).some(function (checkbox) {
     return checkbox.checked;
   });
 };
@@ -4960,7 +4960,7 @@ var formSubmitHandler = function formSubmitHandler(e) {
   e.preventDefault();
   var isEmailValid = emailNode.checkValidity();
 
-  if (!isInterestsValid || !isEmailValid) {
+  if (!isInterestsValid() || !isEmailValid) {
     form.classList.add('is-invalid');
 
     if (emailNode.value.trim().length) {

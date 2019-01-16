@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gepard home</title>
-	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
-<!--	<link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,500,600,700&amp;subset=cyrillic" rel="stylesheet">-->
+	<link rel="icon" href="assets/img/favicon/favicon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="assets/img/favicon/favicon@2x.png" type="image/png" sizes="32x32">
+	<link rel="icon" href="assets/img/favicon/favicon@6x.png" type="image/png" sizes="96x96"/>
+	<link rel="icon" href="assets/img/favicon/favicon@12x.png" type="image/png" sizes="192x192"/>
+	<link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
     <script src="js/index.js" defer></script>
 </head>
@@ -119,7 +122,7 @@
             <section class="b-clients js-clients">
                 <div class="b-clients__wr">
                     <button class="b-clients__toggler js-clients__toggler" type="button">
-                        <span class="text">Show <span class="text_closed">more</span>
+                        <span class="text">Show&nbsp;<span class="text_closed">more</span>
                         <span class="text_opened">less</span>
                         </span>
                         <svg class="icon" width="23" height="24">
@@ -414,7 +417,7 @@
                     </form>
                 </div>
             </section>
-            <article class="b-article">
+            <article class="b-article b-article_active">
                 <span class="b-anchor" id="syndicator"></span>
                 <div class="b-article__wr">
                     <div class="b-article__container">
@@ -424,14 +427,14 @@
                             <p class="b-article__descr">Aggregate product data from multiple content sources, transform it and deliver to multiple retailers in their taxonomy. With Gepard Syndicator you'll master your A+ product data and create an exceptional shopping experience.<br><br>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
                         </div>
                     </div>
-                    <a href="#" class="b-btn">
+                    <a href="#" class="b-btn_dark">
                         <span class="b-btn__wr_inner">
                             <span class="b-btn__inner">Learn more</span>
                         </span>
                     </a>
                 </div>
             </article>
-            <article class="b-article_reverse b-article_active">
+            <article class="b-article_reverse">
                 <span class="b-anchor" id="pim"></span>
                 <div class="b-article__wr">
                     <div class="b-article__container">
@@ -441,7 +444,7 @@
                             <p class="b-article__descr">Collect product information, files    and images from multiple sourc es to a single platform. With Gepard PIM you'd be able to efficiently optimize, enrich and share data with your e-commerce partners at the one place.<br><br>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
                         </div>
                     </div>
-                    <a href="#" class="b-btn_dark">
+                    <a href="#" class="b-btn">
                         <span class="b-btn__wr_inner">
                             <span class="b-btn__inner">Learn more</span>
                         </span>
@@ -501,6 +504,12 @@
                                        src="assets/img/cases/case-logo-hp.png"
                                     srcset="assets/img/cases/case-logo-hp@2x.png 2x,
                                             assets/img/cases/case-logo-hp@3x.png 3x">
+                               
+<!--
+                                <svg class="b-case__logo" width="40" height="40">
+                                    <use xlink:href="#case-logo-hp"></use>
+                                </svg>
+-->
                                 <div class="b-case__title_common">Case Study</div>
                             </div>
                             <div class="b-case__title">HOW GEPARD SET UP HP DATA TRANSFORMATION FOR AMAZON</div>
@@ -527,6 +536,12 @@
                                        src="assets/img/cases/case-logo-gs1.png"
                                     srcset="assets/img/cases/case-logo-gs1@2x.png 2x,
                                             assets/img/cases/case-logo-gs1@3x.png 3x">
+                                            
+<!--
+                                <svg class="b-case__logo" width="45" height="40">
+                                    <use xlink:href="#case-logo-gs1"></use>
+                                </svg>
+-->
                                 <div class="b-case__title_common">Case Study</div>
                             </div>
                             <div class="b-case__title">How GS1 Created the Fashion Base Portal for Dutch Suppliers</div>
@@ -542,7 +557,7 @@
             <section class="b-contactus">
                 <div class="b-contactus__wr">
                     <div class="b-contactus__title">Contact Us</div>
-                    <form class="b-form_contactus js-form_contactus is-popup_visible" novalidate method="POST">
+                    <form class="b-form_contactus js-form_contactus is-popup_visible" novalidate method="POST" action='/contactus/'>
                         <div class="b-contactus__block_checkboxes">
                             <div class="b-contactus__title_sub">Interested in*</div>
                             <label class="b-label_checkbox">

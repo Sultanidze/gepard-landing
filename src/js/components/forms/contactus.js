@@ -7,7 +7,7 @@ const url = form.action;
 const method = form.method;
 
 const isInterestsValid = function(){
-    return checkboxNodes.some( checkbox => checkbox.checked)
+    return [...checkboxNodes].some( checkbox => checkbox.checked)
 }
 const interestsValue = () => ([...checkboxNodes]).filter( (checkbox) => checkbox.checked ).map(checkbox => checkbox.value)
 
@@ -24,7 +24,7 @@ const formSubmitHandler = function(e){
     
     const isEmailValid = emailNode.checkValidity();
     
-    if (!isInterestsValid || !isEmailValid) {
+    if (!isInterestsValid() || !isEmailValid) {
         form.classList.add('is-invalid')
         if (emailNode.value.trim().length) {
             form.classList.add('is-touched')
