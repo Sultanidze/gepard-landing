@@ -80,14 +80,14 @@
     
     &s{
         padding: 37px 0 60px;
-        background-image: url(../assets/img/targets-bg-left.jpg), url(../assets/img/targets-bg-right.jpg);
+        background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
         background-position: left, right;
         background-repeat: no-repeat;
         background-size: contain;
         
         @include media('<desktop'){
             padding-bottom: 50px;
-            background-image: url(../assets/img/targets-bg-left-top.jpg), url(../assets/img/targets-bg-right-top.jpg), url(../assets/img/targets-bg-right-bottom.jpg), url(../assets/img/targets-bg-left-bottom.jpg);
+            background-image: url(../resources/img/targets-bg-left-top.jpg), url(../resources/img/targets-bg-right-top.jpg), url(../resources/img/targets-bg-right-bottom.jpg), url(../resources/img/targets-bg-left-bottom.jpg);
             background-position: left top, right top, right bottom, left bottom;
             background-size: auto;
         }

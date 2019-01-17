@@ -2,7 +2,7 @@
     @include media('<desktop'){
         width: 9px;
         height: 17px;
-        background-image: #{url64('src/assets/img/base64/arrow-right-menu.svg')};
+        background-image: #{url64('src/resources/img/base64/arrow-right-menu.svg')};
         background-repeat: no-repeat;
         background-size: contain;
     }

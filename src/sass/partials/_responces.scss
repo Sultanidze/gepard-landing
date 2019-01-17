@@ -1,5 +1,5 @@
 %bg-arrow_left{
-    background-image: #{url64('src/assets/img/base64/arrow-left.svg')};
+    background-image: #{url64('src/resources/img/base64/arrow-left.svg')};
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -44,7 +44,7 @@
             bottom: calc(100% + 30px);
             width: 22px;
             height: 19px;
-            background-image: #{url64('src/assets/img/base64/quote.png')};
+            background-image: #{url64('src/resources/img/base64/quote.png')};
             
             @include media('<tabletSm'){
                 content: none;

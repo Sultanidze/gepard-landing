@@ -1714,14 +1714,14 @@ form.is-valid .js-popup_success {
             align-self: center; }
   .b-targets {
     padding: 37px 0 60px;
-    background-image: url(../assets/img/targets-bg-left.jpg), url(../assets/img/targets-bg-right.jpg);
+    background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
     background-position: left, right;
     background-repeat: no-repeat;
     background-size: contain; }
     @media (max-width: 1279px) {
       .b-targets {
         padding-bottom: 50px;
-        background-image: url(../assets/img/targets-bg-left-top.jpg), url(../assets/img/targets-bg-right-top.jpg), url(../assets/img/targets-bg-right-bottom.jpg), url(../assets/img/targets-bg-left-bottom.jpg);
+        background-image: url(../resources/img/targets-bg-left-top.jpg), url(../resources/img/targets-bg-right-top.jpg), url(../resources/img/targets-bg-right-bottom.jpg), url(../resources/img/targets-bg-left-bottom.jpg);
         background-position: left top, right top, right bottom, left bottom;
         background-size: auto; } }
     @media (max-width: 767px) {
@@ -2530,7 +2530,7 @@ form.is-valid .js-popup_success {
 .b-contactus {
   position: relative;
   padding: 85px 0 53px;
-  background-image: url(../assets/img/contactus-bg.jpg);
+  background-image: url(../resources/img/contactus-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
   @media (max-width: 1279px) {

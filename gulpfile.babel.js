@@ -35,10 +35,10 @@ var src = {
 	js: 'src/js/**/*.js',
 	jsPlugins: 'src/js/plugins/*.js',
 	jsEntries: 'src/js/*.js',
-    assets: 'src/assets/',
-    fonts: 'src/assets/fonts/**/*.*',
-	img: 'src/assets/img/**/*.+(png|jpg|gif|svg|ico)',
-	sprite: 'src/assets/sprite/*.svg',
+    resources: 'src/resources/',
+    fonts: 'src/resources/fonts/**/*.*',
+	img: 'src/resources/img/**/*.+(png|jpg|gif|svg|ico)',
+	sprite: 'src/resources/sprite/*.svg',
 };
 
 //src.sassModules = src.sassModules.map(function(path){return src.nodeModules + path});
@@ -47,9 +47,9 @@ var dist = {
     root: 'dist/',
 	css: 'dist/css/',
 	js: 'dist/js/',
-    assets: 'dist/assets/',
-    fonts: 'dist/assets/fonts/',
-	img: 'dist/assets/img/',
+    resources: 'dist/resources/',
+    fonts: 'dist/resources/fonts/',
+	img: 'dist/resources/img/',
 //	sprite: 'img/sprite/',
 };
 
@@ -165,19 +165,19 @@ gulp.task('sprite', function(){
                 render: {
 //                    scss: {
 //                        dest:'../../sass/partials/_sprite.scss',
-//                        template: src.assets + "sprite/_sprite_template.scss"
+//                        template: src.resources + "sprite/_sprite_template.scss"
 //                    }
                 }
             }
         }
     }))
-    .pipe(gulp.dest(src.assets));
+    .pipe(gulp.dest(src.resources));
 });
 
 gulp.task('sassGenerators', ['sprite']);
-gulp.task('assets', ["fonts", "img", 'sassGenerators'], function() {
-    return gulp.src(src.assets + "*.*")
-        .pipe(gulp.dest(dist.assets))
+gulp.task('resources', ["fonts", "img", 'sassGenerators'], function() {
+    return gulp.src(src.resources + "*.*")
+        .pipe(gulp.dest(dist.resources))
 });
     
 gulp.task('js', function () {
@@ -213,8 +213,8 @@ gulp.task('clean', ['cleanCache'], function() {
     });
 });
 
-gulp.task('sassUpdate', gulpSequence('assets', 'sass'));
-gulp.task('build', ['assets', 'sassUpdate', 'js', 'html']);
+gulp.task('sassUpdate', gulpSequence('resources', 'sass'));
+gulp.task('build', ['resources', 'sassUpdate', 'js', 'html']);
 
 gulp.task('prod', gulpSequence('set-prod-node-env', 'clean', 'build'));
 gulp.task('dev', gulpSequence('set-dev-node-env', 'build', 'serve'));
