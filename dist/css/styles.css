@@ -1661,13 +1661,11 @@ form.is-valid .js-popup_success {
   transition: background-color 0.3s; }
   @media (max-width: 1279px) {
     .b-target {
+      margin-left: 0;
+      margin-right: 0;
       margin-bottom: 30px;
       width: 100%;
       padding: 15px 30px 25px; } }
-  @media (max-width: 767px) {
-    .b-target {
-      margin-left: 0;
-      margin-right: 0; } }
   .b-target:hover {
     background-color: #221724; }
     .b-target:hover .b-target__wr_icon, .b-target:hover .b-target__descr, .b-target:hover .b-target__title {
@@ -2331,7 +2329,7 @@ form.is-valid .js-popup_success {
   .b-article_active:before {
     background-image: linear-gradient(36deg, #78cba2, #00b39e); }
   .b-article_active .b-article__title {
-    color: #000000; }
+    color: #221724; }
 
 .b-integrations {
   padding: 135px 0 100px; }

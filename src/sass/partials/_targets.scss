@@ -10,14 +10,14 @@
     transition: background-color $time_trans;
         
     @include media('<desktop'){
+        margin-left: 0;
+        margin-right: 0;
         margin-bottom: 30px;
         width: 100%;
         padding: 15px 30px 25px;
     }
-    @include media('<tabletSm'){
-        margin-left: 0;
-        margin-right: 0;
-    }
+//    @include media('<tabletSm'){
+//    }
 
     &:hover{
         background-color: $bg_dark;
