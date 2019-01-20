@@ -59,7 +59,11 @@
     }
     &__logo{
         margin-right: 10px;
-//        fill: currentColor;
+        height: 40px;
+        
+        @include media('ie'){
+            width: 40px;
+        }
     }
     &__title{
         margin-bottom: 40px;
