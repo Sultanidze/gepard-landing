@@ -2263,14 +2263,22 @@ form.is-valid .js-popup_success {
         padding: 0; } }
   .b-article__img {
     margin-bottom: 40px;
+    max-width: 648px;
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
     -o-object-fit: contain;
        object-fit: contain;
     -o-object-position: top;
        object-position: top;
     font-family: 'object-fit: contain; object-position: top'; }
+    @media (max-width: 1279px) {
+      .b-article__img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%; } }
     @media (max-width: 767px) {
       .b-article__img {
-        width: 100%;
         -o-object-position: center;
            object-position: center;
         font-family: 'object-fit:contain;object-position: center'; } }

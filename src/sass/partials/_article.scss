@@ -41,12 +41,21 @@
     }
     &__img{
         margin-bottom: 40px;
+        max-width: 648px;
+        align-self: flex-start;
         object-fit: contain;
         object-position: top;
         font-family: 'object-fit: contain; object-position: top';
         
-        @include media('<tabletSm'){
+        @include media('<desktop'){
+            margin-left: auto;
+            margin-right: auto;
             width: 100%;
+//            max-width: 100%;
+        }
+        
+        @include media('<tabletSm'){
+//            width: 100%;
             object-position: center;
             font-family: 'object-fit:contain;object-position: center';
         }
