@@ -1503,6 +1503,7 @@ form.is-valid .js-popup_success {
         max-height: 40px;
         max-width: 100%; } }
   .b-clients {
+    position: relative;
     padding: 40px 0; }
     @media (max-width: 767px) {
       .b-clients.opened {
@@ -1711,6 +1712,7 @@ form.is-valid .js-popup_success {
         -ms-flex-item-align: center;
             align-self: center; }
   .b-targets {
+    position: relative;
     padding: 37px 0 60px;
     background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
     background-position: left, right;
@@ -1833,6 +1835,7 @@ form.is-valid .js-popup_success {
         -ms-user-select: none;
             user-select: none; }
   .b-responces {
+    position: relative;
     padding: 40px 0 55px; }
     .b-responces__slider:not(.tns-slider) > .b-responce:nth-child(n+2) {
       display: none; }
@@ -2032,6 +2035,7 @@ form.is-valid .js-popup_success {
     color: #949494;
     font-size: 14px; }
   .b-advantages {
+    position: relative;
     background-color: #ededed; }
     .b-advantages__container {
       padding: 50px 0 35px; }
@@ -2356,6 +2360,7 @@ form.is-valid .js-popup_success {
       margin-left: 5px;
       margin-right: 5px; } }
   .b-integrations {
+    position: relative;
     padding: 135px 0 100px; }
     @media (max-width: 1279px) {
       .b-integrations {

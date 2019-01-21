@@ -79,6 +79,7 @@
     }
     
     &s{
+        position: relative;
         padding: 37px 0 60px;
         background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
         background-position: left, right;

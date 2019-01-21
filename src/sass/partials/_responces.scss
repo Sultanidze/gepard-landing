@@ -71,6 +71,7 @@
     }
     
     &s{
+        position: relative;
         padding: 40px 0 55px;
         &__wr{
             @extend %wrapper;
