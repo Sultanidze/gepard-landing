@@ -113,6 +113,7 @@
 
     &__addr{
         margin-bottom: 35px;
+        max-width: 100%;
         font-weight: 500;
             
         @include media('<tabletSm'){
@@ -122,6 +123,7 @@
 
     &__email{
         margin-top: auto;
+        max-width: 100%;
         font-weight: 500;
     }
     
