@@ -32,48 +32,7 @@ $height_logo:    140px;
     
     &s{
         position: relative;
-        padding: 40px 0;
-        
-        &.opened{
-            @include media('<tabletSm'){
-                padding: 40px 0 60px;
-            }
-            
-            .text{
-                &_opened{
-                    display: inline;
-                }
-                &_closed{
-                    display: none;
-                }
-            }
-            
-            .b-client{
-                @include media('<tabletSm'){
-                    &:nth-child(n + 6){
-                        visibility: visible;
-                    }
-                }
-                
-                &s{
-                    &__toggler{
-//                        top: 100%;
-//                        bottom: auto;
-                        @include media('<tabletSm'){
-                            display: none;
-                        }
-                    }
-                    &__container_logos{
-                        max-height: 420px;
-                        
-                        @include media('<tabletSm'){
-                            max-height: initial;
-                            height: auto;
-                        }
-                    }
-                }
-            }
-        }
+        padding: 40px 0 74px;
         
         &__wr{
             position: relative;
@@ -142,7 +101,7 @@ $height_logo:    140px;
             }
         }
         &__logos{
-            margin-bottom: -25px;
+//            margin-bottom: -25px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -150,6 +109,47 @@ $height_logo:    140px;
             @include media('<desktop'){
                 margin-left: -30px;
                 margin-right: -30px;
+            }
+        }
+        
+        &.opened{
+            @include media('<tabletSm'){
+                padding: 40px 0;
+            }
+            
+            .text{
+                &_opened{
+                    display: inline;
+                }
+                &_closed{
+                    display: none;
+                }
+            }
+            
+            .b-client{
+                @include media('<tabletSm'){
+                    &:nth-child(n + 6){
+                        visibility: visible;
+                    }
+                }
+                
+                &s{
+                    &__toggler{
+//                        top: 100%;
+//                        bottom: auto;
+                        @include media('<tabletSm'){
+                            display: none;
+                        }
+                    }
+                    &__container_logos{
+                        max-height: 420px;
+                        
+                        @include media('<tabletSm'){
+                            max-height: initial;
+                            height: auto;
+                        }
+                    }
+                }
             }
         }
     }
