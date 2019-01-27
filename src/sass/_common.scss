@@ -33,6 +33,9 @@ a{
 .g-hidden{
     display: none;
 }
+.g-color_active{
+    color: $active;
+}
 
 // MAIN STYLES
 html, body{

@@ -1,6 +1,7 @@
 import {sendXHR, inputHandler} from './_partials';
 
-const form = document.querySelector('.js-form_contactus');
+const form = document.querySelector('.js-form_contactus') ||
+             document.querySelector('.js-form_contactusExt');
 const checkboxNodes = form.querySelectorAll('input[type=checkbox]');
 const emailNode = form.querySelector('input[type=email]');
 const url = form.action;

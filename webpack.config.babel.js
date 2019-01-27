@@ -1,7 +1,9 @@
 import path from "path";
+//import webpack from "webpack";
+//import UglifyJsPlugin  from "uglifyjs-webpack-plugin";
 
 export default {
-    mode: "none",
+//    mode: "none",
     devtool: 'source-map',
     module: {
         rules: [
@@ -22,5 +24,5 @@ export default {
             'node_modules/',
             'src/js/plugins/',
         ],
-    },
-};
+    }
+}

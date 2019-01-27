@@ -25,7 +25,7 @@ import webpack      from 'webpack-stream';
 
 import webpackConfig from './webpack.config.babel';
 
-const isProduction = process.env.NODE_ENV === 'production'
+//let isProduction;
 
 var src = {
     root: 'src/',
@@ -54,10 +54,12 @@ var dist = {
 };
 
 gulp.task('set-dev-node-env', function() {
+//    isProduction = false;
     return process.env.NODE_ENV = 'development';
 });
 
 gulp.task('set-prod-node-env', function() {
+//    isProduction = true;
     return process.env.NODE_ENV = 'production';
 });
 
@@ -98,7 +100,7 @@ gulp.task('sass', function() {
 			}).on('error', sass.logError))
 			.pipe(autoprefixer())
 			// .pipe(autoprefixer(['last 10 major versions', "Firefox > 20", '> 0.1%', 'ie 10-11']))
-			.pipe(gulpif(isProduction, cleanCSS()))
+			.pipe(gulpif(process.env.NODE_ENV === 'production', cleanCSS()))
 	    .pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(dist.css))
 		.pipe(browserSync.stream());
