@@ -7,14 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
-    "last 10 major versions",
-    "Firefox > 20",
-    "> 1%",
-    "ie 11"
+	"> 0.25%",
+	"not dead"
   ],
   "babel": {
     "presets": [
-      "@babel/preset-env"
+		[
+		  "@babel/preset-env",
+		  {
+			"useBuiltIns": "entry"
+		  }
+		]
     ]
   },
   "author": "Sultanidze",
@@ -46,6 +49,7 @@
     "webpack-stream": "^5.1.1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "@iconfu/svg-inject": "^1.2.1",
     "element-closest": "^3.0.0",
     "include-media": "^1.4.9",
