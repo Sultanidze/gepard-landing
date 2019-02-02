@@ -1,7 +1,17 @@
+.webp{
+    .b-contactus{
+        background-image: url(../resources/img/contactus-bg.webp);
+    }
+}
+.no-webp{
+    .b-contactus{
+        background-image: url(../resources/img/contactus-bg.jpg);
+    }
+}
+
 .b-contactus{
     position: relative;
     padding: 85px 0 53px;
-    background-image: url(../resources/img/contactus-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
         

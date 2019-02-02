@@ -37,7 +37,7 @@ var src = {
 	jsEntries: 'src/js/*.js',
     resources: 'src/resources/',
     fonts: 'src/resources/fonts/**/*.*',
-	img: 'src/resources/img/**/*.+(png|jpg|gif|svg|ico)',
+	img: 'src/resources/img/**/*.+(png|jpg|gif|svg|ico|webp)',
 	sprite: 'src/resources/sprite/*.svg',
 };
 

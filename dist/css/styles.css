@@ -1322,6 +1322,18 @@ form.is-valid .js-popup_success {
           max-height: initial;
           height: auto; } }
 
+.webp .b-targets {
+  background-image: url(../resources/img/targets-bg-left.webp), url(../resources/img/targets-bg-right.webp); }
+  @media (max-width: 1279px) {
+    .webp .b-targets {
+      background-image: url(../resources/img/targets-bg-left-top.webp), url(../resources/img/targets-bg-right-top.webp), url(../resources/img/targets-bg-right-bottom.webp), url(../resources/img/targets-bg-left-bottom.webp); } }
+
+.no-webp .b-targets {
+  background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg); }
+  @media (max-width: 1279px) {
+    .no-webp .b-targets {
+      background-image: url(../resources/img/targets-bg-left-top.jpg), url(../resources/img/targets-bg-right-top.jpg), url(../resources/img/targets-bg-right-bottom.jpg), url(../resources/img/targets-bg-left-bottom.jpg); } }
+
 .b-target {
   position: relative;
   margin: 0 15px;
@@ -1375,14 +1387,12 @@ form.is-valid .js-popup_success {
   .b-targets {
     position: relative;
     padding: 37px 0 60px;
-    background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
     background-position: left, right;
     background-repeat: no-repeat;
     background-size: contain; }
     @media (max-width: 1279px) {
       .b-targets {
         padding-bottom: 50px;
-        background-image: url(../resources/img/targets-bg-left-top.jpg), url(../resources/img/targets-bg-right-top.jpg), url(../resources/img/targets-bg-right-bottom.jpg), url(../resources/img/targets-bg-left-bottom.jpg);
         background-position: left top, right top, right bottom, left bottom;
         background-size: auto; } }
     @media (max-width: 767px) {
@@ -2005,10 +2015,15 @@ form.is-valid .js-popup_success {
     .b-case .b-btn, .b-case .b-btn_dark {
       width: 100%; } }
 
+.webp .b-contactus {
+  background-image: url(../resources/img/contactus-bg.webp); }
+
+.no-webp .b-contactus {
+  background-image: url(../resources/img/contactus-bg.jpg); }
+
 .b-contactus {
   position: relative;
   padding: 85px 0 53px;
-  background-image: url(../resources/img/contactus-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
   @media (max-width: 1279px) {

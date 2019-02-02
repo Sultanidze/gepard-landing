@@ -1,3 +1,22 @@
+.webp{
+    .b-targets{
+        background-image: url(../resources/img/targets-bg-left.webp), url(../resources/img/targets-bg-right.webp);
+        
+        @include media('<desktop'){
+            background-image: url(../resources/img/targets-bg-left-top.webp), url(../resources/img/targets-bg-right-top.webp), url(../resources/img/targets-bg-right-bottom.webp), url(../resources/img/targets-bg-left-bottom.webp);
+        }
+    }
+}
+.no-webp{
+    .b-targets{
+        background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
+        
+        @include media('<desktop'){
+            background-image: url(../resources/img/targets-bg-left-top.jpg), url(../resources/img/targets-bg-right-top.jpg), url(../resources/img/targets-bg-right-bottom.jpg), url(../resources/img/targets-bg-left-bottom.jpg);
+        }
+    }
+}
+
 .b-target{
     position: relative;
     margin: 0 15px;
@@ -81,14 +100,12 @@
     &s{
         position: relative;
         padding: 37px 0 60px;
-        background-image: url(../resources/img/targets-bg-left.jpg), url(../resources/img/targets-bg-right.jpg);
         background-position: left, right;
         background-repeat: no-repeat;
         background-size: contain;
         
         @include media('<desktop'){
             padding-bottom: 50px;
-            background-image: url(../resources/img/targets-bg-left-top.jpg), url(../resources/img/targets-bg-right-top.jpg), url(../resources/img/targets-bg-right-bottom.jpg), url(../resources/img/targets-bg-left-bottom.jpg);
             background-position: left top, right top, right bottom, left bottom;
             background-size: auto;
         }
