@@ -52,6 +52,7 @@
     "@babel/polyfill": "^7.2.5",
     "@iconfu/svg-inject": "^1.2.1",
     "element-closest": "^3.0.0",
+    "formdata-polyfill": "^3.0.13",
     "include-media": "^1.4.9",
     "is-mobile": "^1.0.0",
     "jump.js": "^1.0.2",
