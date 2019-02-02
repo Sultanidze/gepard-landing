@@ -7,17 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
-	"> 0.25%",
-	"not dead"
+    "> 0.25%",
+    "not dead"
   ],
   "babel": {
     "presets": [
-		[
-		  "@babel/preset-env",
-		  {
-			"useBuiltIns": "entry"
-		  }
-		]
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry"
+        }
+      ]
     ]
   },
   "author": "Sultanidze",
@@ -58,6 +58,7 @@
     "nodelist-foreach-polyfill": "^1.2.0",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.3",
+    "supports-webp": "^1.0.7",
     "tiny-slider": "^2.9.1"
   }
 }
