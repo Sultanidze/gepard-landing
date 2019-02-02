@@ -550,7 +550,11 @@ img[data-src], img[data-src-lg] {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
   @media (max-width: 767px) {
     .b-label__text {
       min-height: 30px;
@@ -582,6 +586,7 @@ input[type="checkbox"] {
   input[type="checkbox"] + .b-label__text_dark:before {
     border: 2px solid #00b39e; }
   input[type="checkbox"]:checked + .b-label__text:before {
+    border: 2px solid #e64c37;
     background-color: #e64c37; }
   input[type="checkbox"]:disabled + .b-label__text:before {
     background-color: #777578; }
