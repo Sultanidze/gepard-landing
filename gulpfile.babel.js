@@ -1,10 +1,12 @@
 import gulp         from 'gulp';
 import gulpif       from 'gulp-if';
+import htmlmin      from 'gulp-htmlmin';
 import gulpSequence from 'gulp-sequence';
 import sass         from 'gulp-sass';
 import sourcemaps   from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS     from 'gulp-clean-css';
+import critical     from 'critical';
 import browserSync  from 'browser-sync';
 //import notify from 'gulp-notify';
 
@@ -115,6 +117,36 @@ gulp.task('html', function () {
     .pipe(gulp.dest(dist.root));
 });
 
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+    return gulp.src(dist.root + '*.html')
+    .pipe(critical.stream({
+        inline: true,
+        minify: true,
+        base: 'dist/',
+        
+        dimensions: [
+            {
+              width: 320,
+              height: 823,
+            },
+            {
+              width: 768,
+              height: 1024,
+            },
+            {
+              width: 1024,
+              height: 1366,
+            },
+            {
+              width: 1280,
+              height: 1440,
+            },
+        ]
+    }))
+    .pipe(gulp.dest(dist.root));
+});
+
 gulp.task('fonts', function(){
 	return gulp.src(src.fonts)
     .pipe(gulp.dest(dist.fonts));
@@ -218,6 +250,6 @@ gulp.task('clean', ['cleanCache'], function() {
 gulp.task('sassUpdate', gulpSequence('resources', 'sass'));
 gulp.task('build', ['resources', 'sassUpdate', 'js', 'html']);
 
-gulp.task('prod', gulpSequence('set-prod-node-env', 'clean', 'build'));
+gulp.task('prod', gulpSequence('set-prod-node-env', 'clean', 'build', 'critical'));
 gulp.task('dev', gulpSequence('set-dev-node-env', 'build', 'serve'));
 gulp.task('default', ['dev']);
