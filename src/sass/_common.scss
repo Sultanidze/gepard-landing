@@ -36,6 +36,12 @@ a{
 .g-color_active{
     color: $active;
 }
+.g-gradient_active{
+    @extend %gradient__active_angled;
+}
+.g-gradient_dark{
+    @extend %gradient__dark_angled;
+}
 
 // MAIN STYLES
 html, body{

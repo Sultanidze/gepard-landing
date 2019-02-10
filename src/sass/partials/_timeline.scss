@@ -1,0 +1,104 @@
+$shadow: 0 0 24px 2px rgba($black, .22);
+$decor_bottom: 110px;
+
+.b-timeline{
+    position: relative;
+    
+    &__container{
+        padding: 75px 0 50px;
+    }
+    &__wr{
+        margin: 0 auto;
+        max-width: 1366px;
+        padding: 0 30px;
+        display: flex;
+    }
+    &__decor{
+        position: absolute;
+            width: 100%;
+        height: 0;
+        bottom: $decor_bottom;
+        
+        &:after{
+            content: '';
+            @extend %gradient__active_angled;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            transform: translateY(50%);
+            box-shadow: $shadow;
+        }
+    }
+    &__timestamp{
+        border-left: 1px solid rgba($white, 0.4);
+        width: 20%;
+    }
+}
+
+.b-timestamp{
+    display: flex;
+    flex-direction: column;
+    padding: 0 45px 0 33px;
+    color: $white;
+    font-weight: 500;
+    
+    &_current{
+        color: $active;
+        
+        .b-timestamp{
+            &__year{
+                .year{
+                    &:before,
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        margin: auto;
+                        transform: translateY(-50%);
+                        border-radius: 50%;
+                    }
+                    &:before{
+                        border: 2px solid $active;
+                        width: 103px;
+                        height: 103px;
+                        background-color: rgba($bg_dark, 0.59);
+                    }
+                    &:after{
+                        width: 20px;
+                        height: 20px;
+                        @extend %gradient__active_angled;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__descr{
+        margin-bottom: 30px;
+        padding-top: 33px;
+    }
+    &__year{
+        position: relative;
+        margin-top: auto;
+        display: flex;
+        height: $decor_bottom;
+        align-items: center;
+        
+        &:before{
+            content: '';
+            @extend %gradient__active_angled;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            width: 7px;
+            height: 7px;
+            transform: translate(-50%, -50%);
+            box-shadow: $shadow;
+        }
+    }
+}

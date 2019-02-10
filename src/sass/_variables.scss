@@ -65,15 +65,15 @@ $time_trans:        0.3s;
     }
 }
 
-@mixin gradient__active_angled{
-    background-image: linear-gradient($gradient_angle, $gradient__active_start, $gradient__active_end);
+@mixin gradient__active_angled($angle: $gradient_angle){
+    background-image: linear-gradient($angle, $gradient__active_start, $gradient__active_end);
 }
 %gradient__active_angled{
     @include gradient__active_angled;
 }
 
-@mixin gradient__dark_angled{
-    background-image: linear-gradient($gradient_angle, $gradient__dark_start, $gradient__dark_end);
+@mixin gradient__dark_angled($angle: $gradient_angle){
+    background-image: linear-gradient($angle, $gradient__dark_start, $gradient__dark_end);
 }
 %gradient__dark_angled{
     @include gradient__dark_angled;
