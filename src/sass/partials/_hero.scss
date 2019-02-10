@@ -2,7 +2,7 @@
     min-height: 320px;
     height: calc(100vh - #{$header__height_desktop});
     max-height: calc(768px - #{$header__height_desktop});
-    padding: 15px 20px 0;
+    padding: 0 20px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -33,6 +33,10 @@
         padding: 0;
     }
     
+    &_about{
+        height: calc(100vw * 0.3368);
+    }
+    
     &__content{
         position: relative;
         max-width: 1140px;
@@ -56,6 +60,17 @@
             padding: 0 17px;
             color: $black;
         }
+        
+        &_about{
+            margin-bottom: 20px;
+            
+            @include media('<desktop'){
+                
+            }
+            @include media('<tabletSm'){
+                
+            }
+        }
     }
     &__descr{
         margin-bottom: 35px;
@@ -74,6 +89,17 @@
             padding: 0 17px;
             font-size: 14px;
             color: $black;
+        }
+        
+        &_about{
+            font-size: 22px;
+            
+            @include media('<desktop'){
+                
+            }
+            @include media('<tabletSm'){
+                
+            }
         }
     }
     &__btns{
