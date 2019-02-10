@@ -1,0 +1,43 @@
+$grey_badge: #8a8a8a;
+
+.b-badge{
+    &s{
+        padding-top: 55px;
+        &__wr{
+            @extend %wrapper;
+            padding: 0;
+            display: flex;
+        }
+    }
+    
+    margin: 0 15px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 0 30px;
+    text-align: center;
+    
+    &__img{
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $grey_badge;
+        
+        svg{
+            fill: $active;
+        }
+    }
+    &__title{
+        font-size: 22px;
+        color: $black;
+    }
+    &__descr{
+        font-weight: 500;
+        color: $grey_badge;
+    }
+}
