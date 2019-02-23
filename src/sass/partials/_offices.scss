@@ -1,23 +1,20 @@
 .b-office{
     position: relative;
-    margin: 0 15px 20px;
+    margin: 0 0 20px;
     display: flex;
     flex-direction: column;
-    width: calc(25% - 30px);
+    width: 286px;
     color: $text_grey;
     background-color: $white;
     box-shadow: 0 0 30px rgba($black, 0.22);
     transition: color $time_trans, box-shadow $time_trans;
         
     @include media('<desktop'){
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 30px;
-        width: calc(50% - 30px);
+        margin: 0 16px 30px;
     }
     @include media('<tabletSm'){
-        margin-bottom: 17px;
-        width: 100%;
+        margin: 0 0 17px;
+//        width: 100%;
     }
 
     &:hover{
@@ -156,14 +153,22 @@
             }
         }
         &__container{
-            margin: 0 -15px;
+//            margin: 0 -15px;
+            margin: 0 auto;
             display: flex;
-            justify-content: space-around;
+//            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
 
+            @include media('<desktop'){
+                justify-content: center;
+                max-width: 800px;
+            }
             @include media('<tabletSm'){
                 flex-direction: column;
-                margin: 0;
+                align-items: center;
+//                margin: 0;
+                max-width: 320px;
             }
         }
     }
