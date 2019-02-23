@@ -82,6 +82,11 @@
     }
     &__toggler{
         color: $grey_about;
+        
+        @include media('<tabletSm'){
+            position: static;
+            width: auto;
+        }
     }
 }
 

@@ -1,23 +1,56 @@
 $shadow: 0 0 24px 2px rgba($black, .22);
-$decor_bottom: 110px;
+//$gradient__color_stop: 
+
+$decor_bottom:      110px;
+$decor_bottom_md:   80px;
 
 .b-timeline{
     position: relative;
     
+    @include media('<tabletSm'){
+        position: static;
+        display: flex;
+    }
+    
     &__container{
         padding: 75px 0 50px;
+        
+        @include media('<tabletSm'){
+            padding: 0;
+            position: relative;
+        }
     }
     &__wr{
         margin: 0 auto;
         max-width: 1366px;
         padding: 0 30px;
         display: flex;
+        
+        @include media('<tabletSm'){
+            padding: 35px 18px 35px 45px;
+            flex-grow: 1;
+            flex-direction: column;
+            @include gradient__dark_angled(-90deg);
+        }
     }
     &__decor{
         position: absolute;
-            width: 100%;
+        width: 100%;
         height: 0;
         bottom: $decor_bottom;
+        
+        @include media('<tabletLg'){
+            bottom: $decor_bottom_md;
+        }
+        
+        @include media('<tabletSm'){
+            @include gradient__dark_angled(-90deg);
+            position: relative;
+            bottom: 0;
+            flex-shrink: 0;
+            width: 45px;
+            height: auto;
+        }
         
         &:after{
             content: '';
@@ -29,11 +62,22 @@ $decor_bottom: 110px;
             height: 1px;
             transform: translateY(50%);
             box-shadow: $shadow;
+            
+            @include media('<tabletSm'){
+                left: 100%;
+                width: 1px;
+                height: 100%;
+                transform: translateX(-50%);
+            }
         }
     }
     &__timestamp{
         border-left: 1px solid rgba($white, 0.4);
         width: 20%;
+        
+        @include media('<tabletSm'){
+            width: 100%;
+        }
     }
 }
 
@@ -44,11 +88,37 @@ $decor_bottom: 110px;
     color: $white;
     font-weight: 500;
     
+    @include media('<tabletLg'){
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    @include media('<tabletSm'){
+        position: relative;
+        border-left: none;
+        padding: 23px 0;
+        padding-right: 15%;
+        font-size: 16px;
+    }
+    
+    + .b-timestamp{
+        @include media('<tabletSm'){
+            border-top: 1px solid rgba($white, .3);
+        }
+    }
+    
     &_current{
         color: $active;
         
         .b-timestamp{
             &__year{
+                &:before{
+                    @include media('<tabletSm'){
+                        z-index: 1;
+                        width: 11px;
+                        height: 11px;
+                    }
+                }
+                
                 .year{
                     &:before,
                     &:after{
@@ -66,11 +136,32 @@ $decor_bottom: 110px;
                         width: 103px;
                         height: 103px;
                         background-color: rgba($bg_dark, 0.59);
+                        
+                        @include media('<desktop'){
+                            width: 80px;
+                            height: 80px;
+                        }
+                        @include media('<tabletLg'){
+                            width: 80px;
+                            height: 80px;
+                        }
+                        @include media('<tabletSm'){
+                            top: 45%;
+                            left: -45px;
+                            margin: 0;
+                            transform: translate(-50%, -50%);
+                            width: 54px;
+                            height: 54px;
+                        }
                     }
                     &:after{
                         width: 20px;
                         height: 20px;
                         @extend %gradient__active_angled;
+                        
+                        @include media('<tabletSm'){
+                            content: none;
+                        }
                     }
                 }
             }
@@ -80,6 +171,15 @@ $decor_bottom: 110px;
     &__descr{
         margin-bottom: 30px;
         padding-top: 33px;
+        
+        @include media('<tabletLg'){
+            margin-bottom: 23px;
+            padding-top: 20px;
+        }
+        @include media('<tabletSm'){
+            margin-bottom: 12px;
+            padding-top: 0;
+        }
     }
     &__year{
         position: relative;
@@ -87,6 +187,14 @@ $decor_bottom: 110px;
         display: flex;
         height: $decor_bottom;
         align-items: center;
+        
+        @include media('<tabletLg'){
+            height: $decor_bottom_md;
+        }
+        @include media('<tabletSm'){
+            position: static;
+            height: auto;
+        }
         
         &:before{
             content: '';
@@ -99,6 +207,12 @@ $decor_bottom: 110px;
             height: 7px;
             transform: translate(-50%, -50%);
             box-shadow: $shadow;
+            
+            
+            @include media('<tabletSm'){
+                top: 45%;
+                left: -45px;
+            }
         }
     }
 }

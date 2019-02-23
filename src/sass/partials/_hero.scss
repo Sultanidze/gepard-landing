@@ -35,6 +35,23 @@
     
     &_about{
         height: calc(100vw * 0.3368);
+        
+        @include media('<tabletSm'){
+            height: auto;
+            
+            > *{
+               margin-bottom: 0; 
+            }
+        }
+        
+        .b-hero{
+            &__content{
+                @include media('<tabletSm'){
+                    @include gradient__active_angled;
+                    padding: 20px 0;
+                }
+            }
+        }
     }
     
     &__content{
@@ -68,7 +85,9 @@
                 
             }
             @include media('<tabletSm'){
-                
+                margin-bottom: 10px;
+                font-size: 18px;
+                color: $white;
             }
         }
     }
@@ -95,10 +114,12 @@
             font-size: 22px;
             
             @include media('<desktop'){
-                
+                font-size: 16px;
             }
             @include media('<tabletSm'){
-                
+                margin-bottom: 0;
+                font-size: 14px;
+                color: rgba($white, .9);
             }
         }
     }
