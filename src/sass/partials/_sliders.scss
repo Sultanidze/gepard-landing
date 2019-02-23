@@ -98,14 +98,6 @@
                 background-color: $text_grey;
             }
             
-            &.tns-nav-active{
-                opacity: 1;
-                
-                &:after{
-                    background-color: $active;
-                }
-            }
-            
             &:hover{
                 box-shadow: 0 0 24px rgba($black, .22);
                 background-image: linear-gradient(to right, $white, $active, $white); 
@@ -113,6 +105,26 @@
                 
                 &:after{
                     background-color: $white;
+                }
+                
+                @include media('<desktop'){
+                    box-shadow: inherit;
+                    background-image: inherit;
+                    opacity: inherit;
+                    
+                    &:after{
+                        background-color: inherit;
+                    }
+                }
+            }
+            
+            &.tns-nav-active{
+                box-shadow: none;
+                background-image: none;
+                opacity: 1;
+                
+                &:after{
+                    background-color: $active;
                 }
             }
         }
@@ -154,14 +166,28 @@
     max-width: 1366px;
     padding-bottom: 130px;
     
+    @include media('<tabletSm'){
+        margin: 0 -7px;
+        padding-bottom: 85px;
+    }
+    
     .tns{
         &-controls{
             left: 0;
             right: 0;
+            
+            @include media('<tabletSm'){
+                display: none;    
+            }
         }
         &-nav{
             bottom: -65px;
             transform: translateY(50%);
+            
+            @include media('<tabletSm'){
+                bottom: -32px;
+            }
+            
             button + button {
                 margin-left: 15px;
             }
@@ -175,12 +201,22 @@
     justify-content: space-between;
     padding: 0 61px;
     
+    @include media('<tabletSm'){
+        flex-direction: column;
+        padding: 0 7px;
+    }
+    
     .part{
         &_half{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             width: calc(50% - 15px);
+            
+            @include media('<tabletSm'){
+                justify-content: flex-start;
+                width: calc(50% - 7px);
+            }
         }
         &_whole{
             width: 100%;
@@ -191,7 +227,19 @@
         }
     }
     
+    > .part{
+        &_half{
+            @include media('<tabletSm'){
+                width: 100%;
+            }
+        }
+    }
+    
     img{
         width: 100%;
+        
+        @include media('<tabletSm'){
+            margin-bottom: 14px;
+        }
     }
 }

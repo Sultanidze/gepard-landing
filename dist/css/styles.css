@@ -2635,16 +2635,25 @@ a.b-footer__link {
       height: 7px;
       border-radius: 50%;
       background-color: #949494; }
-    .tns-nav button.tns-nav-active {
-      opacity: 1; }
-      .tns-nav button.tns-nav-active:after {
-        background-color: #00b39e; }
     .tns-nav button:hover {
       box-shadow: 0 0 24px rgba(0, 0, 0, 0.22);
       background-image: linear-gradient(to right, #FFFFFF, #00b39e, #FFFFFF);
       opacity: 0.6; }
       .tns-nav button:hover:after {
         background-color: #FFFFFF; }
+      @media (max-width: 1279px) {
+        .tns-nav button:hover {
+          box-shadow: inherit;
+          background-image: inherit;
+          opacity: inherit; }
+          .tns-nav button:hover:after {
+            background-color: inherit; } }
+    .tns-nav button.tns-nav-active {
+      box-shadow: none;
+      background-image: none;
+      opacity: 1; }
+      .tns-nav button.tns-nav-active:after {
+        background-color: #00b39e; }
 
 .tns_light .tns-nav button:hover {
   opacity: 1; }
@@ -2660,13 +2669,23 @@ a.b-footer__link {
   margin-right: auto;
   max-width: 1366px;
   padding-bottom: 130px; }
+  @media (max-width: 767px) {
+    .b-slider_about {
+      margin: 0 -7px;
+      padding-bottom: 85px; } }
   .b-slider_about .tns-controls {
     left: 0;
     right: 0; }
+    @media (max-width: 767px) {
+      .b-slider_about .tns-controls {
+        display: none; } }
   .b-slider_about .tns-nav {
     bottom: -65px;
     -webkit-transform: translateY(50%);
             transform: translateY(50%); }
+    @media (max-width: 767px) {
+      .b-slider_about .tns-nav {
+        bottom: -32px; } }
     .b-slider_about .tns-nav button + button {
       margin-left: 15px; }
 
@@ -2674,18 +2693,32 @@ a.b-footer__link {
   display: flex;
   justify-content: space-between;
   padding: 0 61px; }
+  @media (max-width: 767px) {
+    .b-slide_about {
+      flex-direction: column;
+      padding: 0 7px; } }
   .b-slide_about .part_half {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: calc(50% - 15px); }
+    @media (max-width: 767px) {
+      .b-slide_about .part_half {
+        justify-content: flex-start;
+        width: calc(50% - 7px); } }
   .b-slide_about .part_whole {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between; }
+  @media (max-width: 767px) {
+    .b-slide_about > .part_half {
+      width: 100%; } }
   .b-slide_about img {
     width: 100%; }
+    @media (max-width: 767px) {
+      .b-slide_about img {
+        margin-bottom: 14px; } }
 
 .b-badge {
   margin: 0 15px 30px;

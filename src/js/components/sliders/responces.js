@@ -6,9 +6,10 @@ const slider = sliderNode ? tns({
     container: sliderNode,
     items: 1,
     slideBy: 'page',
+    mouseDrag: true,
+    swipeAngle: 25,
 //    autoplay: true,
 //    autoplayButtonOutput: false,
-    mouseDrag: true,
 }) : null;
 
 export default slider;
