@@ -2551,7 +2551,7 @@ a.b-footer__link {
 .b-slide_about {
   display: flex;
   justify-content: space-between;
-  padding: 0 60px; }
+  padding: 0 61px; }
   .b-slide_about .part_half {
     display: flex;
     flex-direction: column;
@@ -2559,6 +2559,7 @@ a.b-footer__link {
     width: calc(50% - 15px); }
   .b-slide_about .part_whole {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between; }
   .b-slide_about img {
@@ -2624,6 +2625,7 @@ a.b-footer__link {
       width: 100%;
       height: 220px;
       background-image: linear-gradient(to top, #ededed 0%, rgba(237, 237, 237, 0.95) 20%, rgba(237, 237, 237, 0.9) 30%, rgba(237, 237, 237, 0) 100%);
+      pointer-events: none;
       opacity: 1;
       transition: opacity .3s; }
   .b-team__title {

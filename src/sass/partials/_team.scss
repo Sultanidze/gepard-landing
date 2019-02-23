@@ -54,6 +54,7 @@
                 rgba($bg_light, 0.9) 30%,
                 rgba($bg_light, 0) 100%
             );
+            pointer-events: none;
             opacity: 1;
             transition: opacity .3s;
         }

@@ -173,7 +173,7 @@
 .b-slide_about{
     display: flex;
     justify-content: space-between;
-    padding: 0 60px;
+    padding: 0 61px;
     
     .part{
         &_half{
@@ -184,6 +184,7 @@
         }
         &_whole{
             width: 100%;
+            height: 100%;
             display: flex;
             justify-content: space-between;
 //            align-items: center;
