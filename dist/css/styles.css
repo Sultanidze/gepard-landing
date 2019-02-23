@@ -2100,7 +2100,10 @@ form.is-valid .js-popup_success {
       display: block;
       padding: 5px; }
       .b-footer__link_social svg {
-        fill: currentColor; }
+        fill: currentColor;
+        transition: fill 0.3s; }
+      .b-footer__link_social:hover svg {
+        fill: #00b39e; }
 
 a.b-footer__link {
   transition: opacity 0.3s; }

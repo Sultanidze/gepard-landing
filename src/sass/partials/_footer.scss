@@ -106,8 +106,16 @@
         &_social{
             display: block;
             padding: 5px;
+            
             svg{
-                fill: currentColor
+                fill: currentColor;
+                transition: fill $time_trans;
+            }
+            
+            &:hover{
+                svg {
+                    fill: $active;
+                }
             }
         }
     }
