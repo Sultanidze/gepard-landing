@@ -2080,7 +2080,9 @@ form.is-valid .js-popup_success {
     display: flex; }
     @media (max-width: 767px) {
       .b-footer__nav_social {
-        margin-left: 0; } }
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between; } }
     .b-footer__nav_social li + li {
       margin-left: 20px; }
   .b-footer__list + .b-footer__list {
@@ -2625,6 +2627,7 @@ a.b-footer__link {
     border-radius: 50%;
     width: 15px;
     height: 15px;
+    padding: 1px 6px;
     opacity: .8; }
     .tns-nav button + button {
       margin-left: 2px; }
