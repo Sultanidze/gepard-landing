@@ -74,5 +74,9 @@
     &__descr{
         font-weight: 500;
         color: $grey_about;
+        
+        @include media('ie'){
+            width: 100%;
+        }
     }
 }
