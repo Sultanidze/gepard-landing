@@ -5,22 +5,72 @@
     justify-content: center;
     flex-wrap: wrap;
     
+    @include media('<desktop'){
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1024px;
+    }
+    @include media('<tabletLg'){
+        margin: 0 auto;
+        width: 100%;
+        max-width: 768px;
+    }
+    @include media('<tabletSm'){
+        margin: 0 -8px;
+        width: auto;
+    }
+    
     &__wr{
         @extend %wrapper;
 //        padding-left: 2px;
 //        padding-right: 2px;
+        @include media('<tabletSm'){
+            padding: 0;
+        }
     }
     &__box{
         padding: 50px 0 95px; 
         background-color: $bg_light;
         
+        @include media('<tabletSm'){
+            padding: 25px 0 50px;
+        }
+        
         &.opened{
             .b-team{
                 &__container{
                     max-height: 1700px;
+                    
+                    @include media('<desktop'){
+                        max-height: 2700px;
+                    }
+                    @include media('<tabletLg'){
+                        max-height: 3500px;
+                    }
+                    @include media('<tabletSm'){
+                        max-height: initial;
+                    }
+                    
                     &:after{
                         opacity: 0;
                     }
+                }
+                &__member{
+                    @include media('<tabletSm'){
+                        &:nth-child(n + 5):nth-child(-n + 6){
+                            .b-teammate{
+                                &__title, &__descr{
+                                    display: block;
+                                }
+                            }
+                        }
+                        &:nth-child(n + 7){
+                            display: block;
+                        }
+                    }
+                }
+                &__footer{
+                    margin-top: 20px;
                 }
             }
             
@@ -38,7 +88,17 @@
         position: relative;
         overflow: hidden;
         max-height: 965px;
-        transition: max-height .3s;
+        transition: max-height $time_trans_long;
+        
+        @include media('<desktop'){
+            
+        }
+        @include media('<tabletLg'){
+            max-height: 940px;
+        }
+        @include media('<tabletSm'){
+            max-height: initial;
+        }
         
         &:after{
             content: '';
@@ -57,28 +117,71 @@
             pointer-events: none;
             opacity: 1;
             transition: opacity .3s;
+            
+            @include media('<tabletSm'){
+                bottom: 30px;
+                height: 19%;
+            }
         }
     }
     
     &__title{
-        padding: 0 0 50px;
+        margin: 0 0 50px;
         text-align: center;
         text-transform: uppercase;
         font-size: 36px;
         font-weight: 600;
         letter-spacing: .08em;
         color: $black;
+        
+        @include media('<desktop'){
+            font-size: 28px;
+        }
+        @include media('<tabletLg'){
+            
+        }
+        @include media('<tabletSm'){
+            margin: 0 0 25px;
+            font-size: 18px;
+        }
     }
     
     &__member{
         margin: 0 15px 60px;
-        width: calc(25% - 31px);
+//        width: calc(25% - 31px);
+        width: 288px;
+        
+        @include media('<laptop'){
+            margin: 0 13px 60px;
+        }
+        @include media('<tabletSm'){
+            margin: 0 8px 30px;
+            flex-shrink: 1;
+            max-width: 288px;
+            width: calc(50% - 16px);
+            
+            &:nth-child(n + 5):nth-child(-n + 6){
+                .b-teammate{
+                    &__title, &__descr{
+                        display: none;
+                    }
+                }
+            }
+            &:nth-child(n + 7){
+                display: none;
+            }
+        }
     }
     
     &__footer{
         margin-top: 30px;
         display: flex;
         flex-direction: row-reverse;
+        
+        @include media('<tabletSm'){
+            margin-top: 0;
+            justify-content: center;
+        }
     }
     &__toggler{
         color: $grey_about;
@@ -86,6 +189,16 @@
         @include media('<tabletSm'){
             position: static;
             width: auto;
+        }
+        @include media('<tabletSm'){
+            flex-direction: row;
+            
+            .text{
+                margin-right: 20px;
+            }
+            .icon{
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -106,13 +219,24 @@
     }
     
     &__title{
-        margin-bottom: 5px;
+        margin-bottom: 3px;
+        display: block;
         font-size: 22px;
         color: $black;
+        
+        @include media('<tabletSm'){
+            padding: 0 5%;
+            font-size: 18px;
+        }
     }
     &__descr{
         font-weight: 500;
         color: $grey_about;
+        
+        @include media('<tabletSm'){
+            padding: 0 5%;
+            font-size: 14px;
+        }
     }
     
     &:hover{

@@ -134,7 +134,7 @@
         text-align: center;
         
         .b-btn{
-            @include media('<desktop'){
+            @include media('<tabletSm'){
                 width: 100%;
             }
         }
