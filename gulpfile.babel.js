@@ -25,7 +25,8 @@ import path         from 'path';
 import named        from 'vinyl-named';
 import webpack      from 'webpack-stream';
 
-import webpackConfig from './webpack.config.babel';
+import webpackConfigES5     from './webpack.configES5.babel';
+import webpackConfigES2015  from './webpack.configES2015.babel';
 
 //let isProduction;
 
@@ -214,10 +215,17 @@ gulp.task('resources', ["fonts", "img", 'sassGenerators'], function() {
         .pipe(gulp.dest(dist.resources))
 });
     
-gulp.task('js', function () {
+gulp.task('js', gulpSequence('js-es5', 'js-es2015') );
+gulp.task('js-es5', function () {
     return gulp.src(src.jsEntries)
         .pipe(named())
-        .pipe(webpack(webpackConfig))
+        .pipe(webpack(webpackConfigES5))
+        .pipe(gulp.dest(dist.js));
+});
+gulp.task('js-es2015', function () {
+    return gulp.src(src.jsEntries)
+        .pipe(named())
+        .pipe(webpack(webpackConfigES2015))
         .pipe(gulp.dest(dist.js));
 });
 
