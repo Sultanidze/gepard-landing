@@ -1,7 +1,9 @@
 import gulp         from 'gulp';
+const series =      gulp.series;
+const parallel =    gulp.parallel;
 import gulpif       from 'gulp-if';
+
 import htmlmin      from 'gulp-htmlmin';
-import gulpSequence from 'gulp-sequence';
 import sass         from 'gulp-sass';
 import sourcemaps   from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
@@ -18,17 +20,13 @@ import replace      from 'gulp-replace';
 import cache        from 'gulp-cache';
 import imagemin     from 'gulp-imagemin';
 import del          from 'del';
-//import concat       from 'gulp-concat';
 import uglify       from 'gulp-uglify';
 import path         from 'path';
-//import babel        from 'gulp-babel';
 import named        from 'vinyl-named';
 import webpack      from 'webpack-stream';
 
 import webpackConfigES5     from './webpack.configES5.babel';
 import webpackConfigES2015  from './webpack.configES2015.babel';
-
-//let isProduction;
 
 var src = {
     root: 'src/',
@@ -56,14 +54,14 @@ var dist = {
 //	sprite: 'img/sprite/',
 };
 
-gulp.task('set-dev-node-env', function() {
-//    isProduction = false;
-    return process.env.NODE_ENV = 'development';
+gulp.task('set-dev-node-env', (done) => {
+    process.env.NODE_ENV = 'development';
+    done();
 });
 
-gulp.task('set-prod-node-env', function() {
-//    isProduction = true;
-    return process.env.NODE_ENV = 'production';
+gulp.task('set-prod-node-env', (done) => {
+    process.env.NODE_ENV = 'production';
+    done();
 });
 
 /* ----- inline-image(pathToFile) ----- */
@@ -94,8 +92,8 @@ function sassFunctions(options) {
   return funcs;
 }
 
-gulp.task('sass', function() {
-	return gulp.src(src.sass)
+gulp.task('sass', () =>
+	gulp.src(src.sass)
 		.pipe(sourcemaps.init())
 			.pipe(sass({
 				includePaths: ['node_modules'],
@@ -106,21 +104,21 @@ gulp.task('sass', function() {
 			.pipe(gulpif(process.env.NODE_ENV === 'production', cleanCSS()))
 	    .pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(dist.css))
-		.pipe(browserSync.stream());
-});
+		.pipe(browserSync.stream())
+);
 
-gulp.task('html', function () {
-    return gulp.src(src.html)
+gulp.task('html', () => 
+    gulp.src(src.html)
     // .pipe(gulpif(process.env.NODE_ENV === 'production', htmlmin({ 
         // collapseWhitespace: true ,
         // removeComments: true
     // })))
-    .pipe(gulp.dest(dist.root));
-});
+    .pipe(gulp.dest(dist.root))
+)
 
 // Generate & Inline Critical-path CSS
-gulp.task('critical', function () {
-    return gulp.src(dist.root + '*.html')
+gulp.task('critical', () => 
+    gulp.src(dist.root + '*.html')
     .pipe(critical.stream({
         inline: true,
         minify: true,
@@ -145,16 +143,16 @@ gulp.task('critical', function () {
             },
         ]
     }))
-    .pipe(gulp.dest(dist.root));
-});
+    .pipe(gulp.dest(dist.root))
+)
 
-gulp.task('fonts', function(){
-	return gulp.src(src.fonts)
-    .pipe(gulp.dest(dist.fonts));
-});
+gulp.task('fonts', () =>
+	gulp.src(src.fonts)
+    .pipe(gulp.dest(dist.fonts))
+)
     
-gulp.task('img', function() {
-	return gulp.src(src.img)
+gulp.task('img', () =>
+	gulp.src(src.img)
 		.pipe(cache(imagemin([
 			imagemin.gifsicle({interlaced: true}),
 			imagemin.jpegtran({progressive: true}),
@@ -170,11 +168,11 @@ gulp.task('img', function() {
 		{
 			verbose: true
 		})))
-		.pipe(gulp.dest(dist.img));
-});
+		.pipe(gulp.dest(dist.img))
+)
 
-gulp.task('sprite', function(){
-    return gulp.src(src.sprite)
+gulp.task('sprite', () =>
+    gulp.src(src.sprite)
 	// minify svg
     .pipe(svgmin({
         js2svg: {
@@ -206,31 +204,30 @@ gulp.task('sprite', function(){
             }
         }
     }))
-    .pipe(gulp.dest(src.resources));
-});
+    .pipe(gulp.dest(src.resources))
+);
 
-gulp.task('sassGenerators', ['sprite']);
-gulp.task('resources', ["fonts", "img", 'sassGenerators'], function() {
-    return gulp.src(src.resources + "*.*")
+gulp.task('sassGenerators', series('sprite'));
+gulp.task('resources', series(parallel('fonts', 'img', 'sassGenerators'), () =>
+    gulp.src(src.resources + "*.*")
         .pipe(gulp.dest(dist.resources))
-});
-    
-gulp.task('js', gulpSequence('js-es5', 'js-es2015') );
-gulp.task('js-es5', function () {
-    return gulp.src(src.jsEntries)
+));
+
+gulp.task('js-es5', () =>
+    gulp.src(src.jsEntries)
         .pipe(named())
         .pipe(webpack(webpackConfigES5))
-        .pipe(gulp.dest(dist.js));
-});
-gulp.task('js-es2015', function () {
-    return gulp.src(src.jsEntries)
+        .pipe(gulp.dest(dist.js))
+);
+gulp.task('js-es2015', () =>
+    gulp.src(src.jsEntries)
         .pipe(named())
         .pipe(webpack(webpackConfigES2015))
-        .pipe(gulp.dest(dist.js));
-});
-
+        .pipe(gulp.dest(dist.js))
+);    
+gulp.task('js', series('js-es5', 'js-es2015'));
 	
-gulp.task('serve', function() {
+gulp.task('serve', () => {
 	browserSync({
 		server: {
 			baseDir: dist.root
@@ -238,26 +235,25 @@ gulp.task('serve', function() {
 		port: 9000,
 		logPrefix: "browserSync"
 	});
-	gulp.watch(src.sass, ['sass']).on('change', browserSync.reload);
-	gulp.watch(src.html, ['html']).on('change', browserSync.reload);
-	gulp.watch(src.js, ['js']).on('change', browserSync.reload);
-	gulp.watch(src.fonts, ['fonts']).on('change', browserSync.reload);
-	gulp.watch(src.img, ['img']).on('change', browserSync.reload);
-	gulp.watch(src.sprite, gulpSequence('sprite', 'sass')).on('change', browserSync.reload);
+	gulp.watch(src.sass, series('sass')).on('change', browserSync.reload);
+	gulp.watch(src.html, series('html')).on('change', browserSync.reload);
+	gulp.watch(src.js, series('js')).on('change', browserSync.reload);
+	gulp.watch(src.fonts, series('fonts')).on('change', browserSync.reload);
+	gulp.watch(src.img, series('img')).on('change', browserSync.reload);
+	gulp.watch(src.sprite, series('sprite', 'sass')).on('change', browserSync.reload);
 });
 
-gulp.task('cleanCache', function (callback) {
-    return cache.clearAll();
-});
-gulp.task('clean', ['cleanCache'], function() {
-    return del(dist.root).then(paths =>{
+gulp.task('cleanCache', () => cache.clearAll() );
+gulp.task('del', () =>
+    del(dist.root).then(paths => {
         console.log('Deleted files and folders:\n', paths.join('\n'));
-    });
-});
+    })
+);
+gulp.task('clean', parallel('cleanCache', 'del'))
 
-gulp.task('sassUpdate', gulpSequence('resources', 'sass'));
-gulp.task('build', ['resources', 'sassUpdate', 'js', 'html']);
+gulp.task('sassUpdate', series('resources', 'sass'));
+gulp.task('build', parallel('resources', 'sassUpdate', 'js', 'html'));
 
-gulp.task('prod', gulpSequence('set-prod-node-env', 'clean', 'build', 'critical'));
-gulp.task('dev', gulpSequence('set-dev-node-env', 'build', 'serve'));
-gulp.task('default', ['dev']);
+gulp.task('prod', series('set-prod-node-env', 'clean', 'build', 'critical'));
+gulp.task('dev', series('set-dev-node-env', 'build', 'serve'));
+gulp.task('default', series('dev'));
